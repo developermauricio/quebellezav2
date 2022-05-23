@@ -1,0 +1,36 @@
+<?php
+$stringManager = StringManagerWooUserRolePrices::getInstance();
+?>
+
+<span class="festi-user-role-prices-regular-price-lable">
+    <?php $stringManager->displayString('cartTotalSavingsRetail'); ?>:
+</span> 
+<?php echo $regularPrice; ?>
+<br />
+<span class="festi-user-role-prices-user-price-lable">
+    <?php $stringManager->displayString('cartTotalSavingsUserPriceTitle'); ?>:
+</span> 
+<?php 
+    echo $userPrice; 
+    
+    if (!$isGeneralTotals) {
+        echo $stringManager->displayString('subscriptionPerMonth'); 
+    }
+?>
+<br />
+<?php
+    if (!empty($fee)) {
+?>
+        <span class="festi-user-role-prices-regular-price-lable">
+            <?php echo $stringManager->displayString('subscriptionSignFee'); ?>:
+        </span> 
+        <?php echo $fee; ?>
+        <br />
+<?php
+    }
+?>
+
+<span class="festi-user-role-prices-discount-lable">
+    <?php $stringManager->displayString('cartTotalSavingsDiscountTitle'); ?>:
+</span> 
+<?php echo $userDiscount; ?>

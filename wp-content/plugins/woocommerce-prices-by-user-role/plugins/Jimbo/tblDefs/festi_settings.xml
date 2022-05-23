@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table  charset="UTF-8" 
+        name="festi_settings" 
+        primaryKey="id"
+        defaultOrderField="id" 
+        defaultOrderDirection="ASC" 
+        rowsForPage="20">
+
+    <fields>
+        <field type="readonly" caption="<?php echo __('Caption'); ?>" name="caption" required="true" width="40%"/>
+        <field type="readonly"  caption="<?php echo __('Name'); ?>" name="name" required="true" sorting="true" width="30%"/>
+        <field type="text"  caption="<?php echo __('Value'); ?>" name="value" required="true" sorting="true" width="30%"/>
+    </fields>
+    
+    <actions>
+        <action type="list" caption="<?php echo __('Environment Variables'); ?>" />
+        <action type="edit" caption="<?php echo __('Edit'); ?>" />
+    </actions> 
+    
+</table>

@@ -1,0 +1,30 @@
+
+<section id="widget-grid" class="b-stage-layout-columns">
+<div class="row">
+<?php 
+
+$columnsBlocks = array();
+
+foreach ($grid as $rowIndex => $columns) {
+    foreach ($columns as $columnIndex => $cell) {
+        $columnsBlocks[$columnIndex][] = '<div class="col-md-12">'.$cell['content'].'</div>';
+    }
+}
+
+for ($i = 0; $i < $size; $i++) {
+?>
+	<div class="col-md-<?php echo $defaultLength; ?>">
+		<div class="row">
+			<?php 
+			echo join('', $columnsBlocks[$i]);
+			?>
+		</div>
+	</div>
+<?php
+}
+
+
+?>
+
+</div>
+</section>

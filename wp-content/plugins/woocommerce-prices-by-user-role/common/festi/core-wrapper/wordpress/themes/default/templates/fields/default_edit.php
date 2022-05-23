@@ -1,0 +1,1 @@
+<input type="text" name="<?php echo $this->getName() ?>" value="<?php echo $value; ?>" class="form-control <?php echo $this->getCssClassName(); ?>" />

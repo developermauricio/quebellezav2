@@ -1,0 +1,27 @@
+<?php if (!empty($links)) : ?>
+<div class="input-group audio-input" id="<?php echo $this->getName();?>_audio">
+	<span class="input-group-btn">
+		<button class="btn btn-default remove-btn" type="button">&times;</button>
+	</span>
+	<audio controls="true" class="form-control" src="<?php echo $links['file']; ?>" preload="auto" />
+</div><!-- /input-group -->
+<?php endif; ?>
+<div id="<?php echo $this->getName();?>_audio_upload" class="<?php if (!empty($links)) : ?>hidden<?php endif;?>">
+    <input type="file" name="<?php echo $this->getName(); ?>" 
+    	class="form-control <?php echo $this->getCssClassName(); ?>" />
+    <input type="hidden" name="_<?php echo $this->getName(); ?>" 
+    	value="<?php echo $value; ?>" />
+</div>
+
+<script>
+(function (jQuery, containerFieldId, uploadFieldId) {
+	var $container = jQuery('#' + containerFieldId)
+		, $uploadContainer = jQuery('#' + uploadFieldId);
+
+	jQuery('.remove-btn', $container).on('click', function () {
+		$container.remove();
+		$uploadContainer.removeClass('hidden')
+			.find('[type="hidden"]').val('');
+	});
+})(jQuery, "<?php echo $this->getName();?>_audio", "<?php echo $this->getName();?>_audio_upload");
+</script>

@@ -1,0 +1,34 @@
+<?php
+global $product;
+if ($this->isAddToCartButtonHiddenAndProductPurchasable($product)) {
+    echo $settings['textForNonRegisteredUsers'];
+}
+
+/**
+ * Simple product add to cart
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+
+
+
+if ( ! $product->is_purchasable() ) {
+    return;
+}
+
+?>
+
+<?php
+    // Availability
+    $availability      = $product->get_availability();
+    $availability_html = empty( $availability['availability'] ) ? '' : '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>';
+
+    echo EngineFacade::getInstance()->dispatchFilter(
+        'woocommerce_stock_html', 
+        $availability_html, 
+        $availability['availability'], 
+        $product
+    );
+?>

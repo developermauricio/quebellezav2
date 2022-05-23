@@ -1,0 +1,65 @@
+<?php
+$params = array(
+	'refresh_completed' => '',
+	'refresh_plugin' => '',
+	'delete_role' => ''
+);
+$url = $this->getUrl($params);
+?>
+
+<div class="modal fade" id="addNewRole" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form action="<?php echo $url; ?>"  method="post" class="festi-user-role-prices-form" >
+				<input type="hidden" name="__action" value="new_role" />
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel"><?php echo __('Add New Role', $this->languageDomain); ?></h4>
+				</div>
+				<div class="modal-body">
+					<fieldset class="festi-user-role-prices-options">
+						<?php
+						$vars = array (
+							'fields' => array(
+								'active' => array(
+									'value' => true,
+									'type' => 'input_checkbox',
+									'caption' => __('Active', $this->languageDomain)
+								),
+								'roleName' => array(
+									'caption' => __(
+										'Role Name',
+										$this->languageDomain
+									),
+									'type' => 'input_text',
+									'required' => true
+								),
+								'roleIdent' => array(
+									'caption' => __(
+										'Role Identifier',
+										$this->languageDomain
+									),
+									'type' => 'input_text',
+									'disclaimer' => __(
+										'Add user role with this field, if your language contains non latin characters [A-Z], ex: managers, reseller',
+										$this->languageDomain
+									),
+									'regExp' => '^[a-zA-Z0-9_]+$'
+								),
+							),
+							'currentValues' => array(
+								'active' => true,
+								'roleName' => ''
+							)
+						);
+						echo $this->fetch('settings_fields.phtml', $vars);
+						?>
+					</fieldset>
+				</div>
+				<div class="modal-footer">
+					<input type="submit"  value="<?php echo __('Add New Role', $this->languageDomain); ?>"  class="festi-user-role-prices-save-button button-primary">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

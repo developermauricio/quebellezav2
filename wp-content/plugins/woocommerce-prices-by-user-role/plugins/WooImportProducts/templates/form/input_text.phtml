@@ -1,0 +1,28 @@
+<?php 
+$class = (isset($item['class'])) ? $item['class'] : '';
+
+$data = (isset($item['event'])) ? ' data-event="'.$item['event'].'"' : '';
+
+if (!isset($currentValue)) {
+    $currentValue = (isset($item['value'])) ? $item['value'] : '';
+}
+
+$attr = '';
+if (!empty($item['required']) && $item['required']) {
+    $attr .= ' required';
+}
+
+if (!empty($item['regExp'])) {
+    $attr .= ' pattern="'.$item['regExp'].'"';
+}
+
+
+?>
+
+<input type="text" <?php echo $data;?>  class="<?php echo $class ;?> " name="<?php echo $ident; ?>" value ='<?php echo $currentValue; ?>' <?php echo $attr;?> />
+<?php 
+if (!empty($item['disclaimer'])) {
+    echo '<br /><span class="description">'.$item['disclaimer'].'</span>';
+    
+}
+?>

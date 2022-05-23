@@ -1,0 +1,73 @@
+<?php
+assert($this instanceof Many2manyField);
+
+$currentValues = "";
+$list = $this->getValues();
+if ($list) {
+    $currentValues = join(",", array_keys($list));
+}
+
+$attributes = $this->getElementAttributes();
+
+$result = '<input type="hidden" class="'.$this->getCssClassName().'" name="'.$this->getKeyInRequest().'" id="'.$this->getElementName().'" '.$attributes.' value="'.$currentValues.'">';
+
+echo $result;
+
+$autocompleteUrl = $this->getAutocompleteUrl();
+?>
+<script>
+    jQuery(document).ready(function() {
+        if (typeof(jQuery.fn.select2) !== "undefined") {
+            jQuery('.f-db-form #<?php echo $this->getElementName();?>').select2({
+                multiple: true,
+                id: "value",
+                ajax: {
+                    url: '<?php echo $autocompleteUrl; ?>',
+                    dataType: 'json',
+                    data: function (term, page) {
+                        return {
+                            "<?php echo $this->store->createRequestKey('term'); ?>": term
+                        };
+                    },
+                    results: function (data, page) {
+                        return {results: data.results};
+                    }
+                },
+
+                initSelection: function(element, callback) {
+                    var value = jQuery(element).val();
+
+                    if (value !== "") {
+                        var url = "<?php echo $this->getAutocompleteUrl(); ?>";
+                        url += (url.indexOf('?') > -1) ? '&' : '?';
+                        url += '<?php echo $this->store->createRequestKey('value'); ?>=' + value;
+
+                        jQuery(element).val("");
+
+                        jQuery.ajax(url, {
+                            dataType: "json"
+                        }).done(function(data) {
+                            if (typeof data['results'] === "undefined") {
+                                console.error("Not found select2 value " + value);
+                            } else {
+                                callback(data['results']);
+                            }
+                        });
+                    }
+                },
+
+                formatResult: function (repo) {
+                    return repo.key;
+                },
+
+                formatSelection: function (repo) {
+                    return repo.key;
+                },
+                showSearchInput: true,
+                width: '100%'
+            });
+        } else {
+            console.error("Not found select2 lib");
+        }
+    });
+</script>

@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-23 08:14+0300\n"
+"PO-Revision-Date: 2019-03-19 10:47+0200\n"
+"Last-Translator: Denis Panaskin <goliathdp@gmail.com>\n"
+"Language-Team: Russian <goliathdp@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "File \"%s\" for plugin \"%s\" was not found."
+msgstr "Файл \"%s\" для плагина \"%s\" не найден."
+
+msgid "Class \"%s\" was not found in file \"%s\"."
+msgstr "Класс \"%s\" не найден в файле \"%s\"."
+
+msgid "ERROR_DB_CONNECT"
+msgstr "Ошибка при подключении к базе данных"
+
+msgid "BUTTON_EDIT"
+msgstr "Cохранить"
+
+msgid "BUTTON_REMOVE"
+msgstr "Удалить"
+
+msgid "BUTTON_INSERT"
+msgstr "Добавить"
+
+msgid "BUTTON_BACK"
+msgstr "Назад"
+
+msgid "BUTTON_FILTER"
+msgstr "Фильтр"
+
+msgid "ERR_UNIQKEY"
+msgstr "Такое значение для одного из уникальных полей уже используется"
+
+msgid "ERR_INSERT"
+msgstr "Ошибка при добалвении записи"
+
+msgid "ERR_DELETE"
+msgstr "Ошибка при удалении записи"
+
+msgid "ERR_REQUIRED"
+msgstr "Вы не заполнили поле '%s'"
+
+msgid "ERR_UNKNOWN"
+msgstr "Ошибка"
+
+msgid "ERR_TABLEDEF"
+msgstr "Error while loading table info %s"
+
+msgid "ERR_CONSTRAINT"
+msgstr "Невозможно удалить задействованные данные"
+
+msgid "STATUS_SUCCESS"
+msgstr "Данные успешно сохранены"
+
+msgid "STATUS_SUCCESS_DELETE"
+msgstr "Данные успешно удалены"
+
+msgid "INFO_PAGES"
+msgstr "Страниц"
+
+msgid "ROW_VIEW"
+msgstr "Просмотр записи"
+
+msgid "FORM_CHECK_ALL"
+msgstr "Выделить все / снять выделение"
+
+msgid "ITEMSOERPAGE"
+msgstr "Items per page"
+
+msgid "TOTAL_ITEMS"
+msgstr "Всего"
+
+msgid "FROM"
+msgstr "От"
+
+msgid "TO"
+msgstr "До"
+
+msgid "FILTERS"
+msgstr "Фильтр"
+
+msgid "No more records"
+msgstr "Больше нет записей"
+
+msgid "loading more records..."
+msgstr "загрузка записей..."
+
+msgid "Action"
+msgstr "Действия"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "From"
+msgstr "От"
+
+msgid "To"
+msgstr "До"

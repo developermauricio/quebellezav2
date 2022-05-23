@@ -1,0 +1,20 @@
+<?php
+$stringManager = StringManagerWooUserRolePrices::getInstance();
+?>
+
+<span class="festi-user-role-prices-discount-lable">
+    <?php $stringManager->displayString('productSavingsDiscountTitle'); ?>:
+</span> 
+<?php  echo $userDiscount; ?>
+<br />
+<span class="festi-user-role-prices-regular-price-lable">
+    <?php $stringManager->displayString('productSavingsRegularPrice'); ?>:
+</span> 
+<?php echo sprintf('%1$s %2$s',$regularPrice, $priceSuffix); ?>
+<br />
+<span class="festi-user-role-prices-user-price-lable">
+    <?php $stringManager->displayString('productSavingsUserPriceTitle'); ?>:
+</span> 
+<?php echo sprintf('%1$s %2$s', $userPrice, $priceSuffix); ?>
+
+

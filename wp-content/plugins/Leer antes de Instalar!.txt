@@ -1,0 +1,16 @@
+Fichero descargado de Pillbanana.com
+####################################
+
+Para su correcta instalación realiza los siguientes pasos:
+
+1 Descomprime el contenido del paquete descargado con nombre "elementor-pro-unzip-first.zip"
+2 Instala el plugin contenido en el fichero "elementor.zip"
+3 Instala el plugin contneido en el fichero "elementor-pro.zip"
+4 Por último para activar la licencia ingresa al menú:
+  -Elementor > License
+5 Coloca la siguiente licencia "pillbanana.com" (sin las comillas).
+
+Si ya tienes instalado Elementor o Elementor Pro en tu Wordpress. Te recomendamos que 
+revises el siguiente enlace: https://pillbanana.com/actualizar-temas-y-plugins/
+
+TODO LISTO!! Ya podrás utilizar Elementor Pro en tu web.

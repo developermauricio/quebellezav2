@@ -1,0 +1,126 @@
+<table cellpadding="0" cellspacing="0"  class="festi-user-role-prices-form-table">
+    <tbody>
+    <?php
+
+    foreach ($fields as $ident => $item) {
+        $selectorClass = '';
+
+        if (isset($item['eventClasses'])) {
+            $class = $item['eventClasses'];
+            $classes = explode(",", $class);
+
+            foreach ($classes as $value) {
+                $selectorClass.= ' '.$this->getSelectorClassForDisplayEvent($value);
+            }
+        }
+
+        if ($item['type'] == 'divider') {
+            ?>
+            <tr class="festi-user-role-prices-divider">
+                <th colspan="2">
+                    <?php echo $item['caption']; ?>
+                </th>
+            </tr>
+            <?php
+            continue;
+        }
+
+        $backlight = (isset($item['backlight'])) ? 'festi-user-role-prices-'.$item['backlight'] : '';
+        $classes = (isset($item['classes'])) ? $item['classes'] : '';
+
+        $style = '';
+
+        if ($this->tab->isTaxTableOptionFields($ident)) {
+            $classes .= ' festi-tax-table';
+        }
+
+        if (!$this->isEnabledUserRoleTaxOptions() && $this->tab->isTaxTableOptionFields($ident)) {
+            $style = 'display: none';
+        }
+
+        ?>
+
+        <tr class = "<?php echo $selectorClass; ?> <?php echo $backlight; ?> <?php echo $classes; ?>" style="<?php echo $style; ?>" >
+            <th>
+                <?php
+
+                if (strpos($classes, 'festi-h2') !== false) {
+                    echo '<h2>'.$item['caption'].'<h2>';
+                } else {
+                    echo $item['caption'];
+                }
+
+                if ($ident == 'taxTableHeader') {
+                    $adminUrl = $this->engineFacade->getAdminUrl();
+
+                    $vars = array(
+                        'message' =>
+                            __('Tax Option',
+                                $this->languageDomain
+                            ),
+                        'url' => $adminUrl.'admin.php?page=wc-settings&tab=tax'
+                    );
+
+                    $link = $this->fetch('message_url.phtml', $vars);
+
+                    $text = __('This table handles only tax display option. 
+                                To modify tax rate go to ', $this->languageDomain
+                    );
+
+                    $text .= $link.__('of Woocommerce', $this->languageDomain);
+
+                ?>
+                    <p id="festi-tax-table-header"> <?php echo $text; ?><p>
+                <?php
+                }
+
+                if (isset($item['hint'])) {
+                ?>
+                    <img
+                        class="festi-user-role-prices-help-tip"
+                        title="<?php echo $item['hint']; ?> "
+                        src="<?php echo $this->getPluginImagesUrl('help.png'); ?>"
+                        height="16"
+                        width="16"
+                    >
+                    <?php
+                }
+                ?>
+            </th>
+            <td valign="middle">
+                <?php
+                if ($ident === 'roles') { ?>
+                    <button type="button" class="button add-line-item" data-toggle="modal" data-target="#addNewRole">
+                        <?php echo __('Add New Role', $this->languageDomain); ?>
+                    </button>
+
+                    <p style="font-size:14px;">
+                        <?php echo __('<em>or select an existing</em>', $this->languageDomain); ?>
+                    </p>
+                    <?php
+                }
+                ?>
+                <?php
+
+                $vars = array (
+                    'ident' => $ident,
+                    'item' => $item,
+                    'options' => $fields
+                );
+
+                if ($this->tab->hasUserRolesInTemplateForm($item)) {
+                    $vars['roles'] = $this->getUserRoles();
+                }
+
+                if (isset($currentValues[$ident])) {
+                    $vars['currentValue'] = $currentValues[$ident];
+                }
+                echo $this->fetch('form/'.$item['type'].'.phtml', $vars);
+                ?>
+            </td>
+        </tr>
+        <?php
+    }
+    ?>
+    </tbody>
+</table>

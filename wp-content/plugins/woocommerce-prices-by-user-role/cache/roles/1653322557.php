@@ -1,0 +1,1 @@
+<?php return '{"mayorista":"Mayorista ","granmayorista":"Gran mayorista"}';

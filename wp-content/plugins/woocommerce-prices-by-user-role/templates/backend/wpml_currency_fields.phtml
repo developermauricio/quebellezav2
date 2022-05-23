@@ -1,0 +1,90 @@
+<?php
+    $class = "";
+    $autoFieldClass = "";
+    $wrapClass = "";
+    if ($compabilityManager->isVariationLoop($loop)) {
+        $wrapClass = 'festi-wpml-variable';
+        $autoFieldClass = $loop.'_';
+    }
+?>
+
+<div class="festi-price-wpml-wrap <?php echo $wrapClass; ?> festi-wpml-post-<?php echo $idPost; ?>">
+    <h3><?php echo __('Price by User Roles in Currencies', PRICE_BY_ROLE_LANGUAGE_DOMAIN); ?></h3>
+    <div class="festi-price-wpml-manual festi-price-wpml">
+        <?php
+        foreach ($wpmlCurrencies as $code => $single) {
+            $symbol = $compabilityManager->getCurrencySymbol($code);
+            if (array_key_exists($code, $woocommerceCurrencies)) {
+               echo $woocommerceCurrencies[$code].' ('.$symbol.')'; 
+            }
+            
+            foreach ($roles as $roleKey => $value) {
+                $role = $roleKey.'-currency';
+                
+                $args = array(
+                    'name'  => $compabilityManager->getRoleNameWithCurrencyCode($code, $roleKey, $loop),
+                    'class' => 'short wc_input_price',
+                    'label' => $value['name'],
+                    'id'    => $compabilityManager->getRoleIdWithCurrencyCode($code, $roleKey, $loop),
+                    'value' => $compabilityManager->getRolePriceForChosenCurrency($prices, $role, $code)
+                );
+                    
+                $compabilityManager->displayInputField($args);
+                
+                $codeDefault = $compabilityManager->getDefaultCurrencyCode();
+                
+                $defaultArgs = array(
+                    'id'    => $compabilityManager->getRoleNameWithCurrencyCode($codeDefault, $roleKey, $loop),
+                    'value' => $compabilityManager->getRolePriceForDefaultCurrency($prices, $roleKey),
+                    'class' => 'auto-calculate-default-'.$autoFieldClass.$roleKey,
+                );
+                
+                $compabilityManager->displayHiddenInputField($defaultArgs);
+            }
+        }
+        ?>
+    </div>
+    
+    <div class="festi-price-wpml-auto festi-price-wpml">
+        <?php
+
+        if (!$prices) {
+            $prices = array();
+        }
+
+        foreach ($wpmlCurrencies as $code => $single) {
+            $symbol = $compabilityManager->getCurrencySymbol($code);
+            if (array_key_exists($code, $woocommerceCurrencies)) {
+                echo $woocommerceCurrencies[$code].' ('.$symbol.')';
+            }
+            $label = $code.'_wpml_auto';
+
+            foreach ($roles as $roleKey => $value) {
+
+                $activePrice = 0;
+
+                if ($this->hasRolePrice($roleKey, $prices)) {
+                   $activePrice = $prices[$roleKey];
+                }
+                
+                if ($this->hasRoleSalePrice($roleKey, $prices)) {
+                    $activePrice = $prices['salePrice'][$roleKey];
+                }
+
+                $args = array(
+                    'id' => $compabilityManager->getRoleIdWithCurrencyCode($label, $roleKey, $loop),
+                    'class' => 'short wc_input_price auto-calculate-'.$autoFieldClass.$roleKey,
+                    'label' => $value['name'],
+                    'value' => $activePrice * $single['rate'],
+                    'custom_attributes' => array(
+                        'readonly' => 'readonly',
+                        'rel'      => $single['rate']
+                    )
+                );
+                
+                $compabilityManager->displayInputField($args);
+            }
+        }
+        ?>
+    </div>
+</div>

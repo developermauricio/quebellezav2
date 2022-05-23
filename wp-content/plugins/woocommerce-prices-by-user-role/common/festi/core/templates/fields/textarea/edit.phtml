@@ -1,0 +1,23 @@
+<?php 
+$attributes = $this->getElementAttributes();
+
+$disclaimer = $this->get('disclaimer');
+?>
+<textarea type="text" <?php echo $attributes;?> id="<?php echo $this->getName(); ?>" name="<?php echo $this->getName(); ?>" class="form-control <?php echo $this->getCssClassName(); ?>"><?php echo $this->value; ?></textarea>
+<?php 
+$maxChars = $this->get('maxChars');
+if ($maxChars) {
+?>
+<small id="counter-<?php echo $this->getName(); ?>"><?php echo __('Characters left: %s', $maxChars); ?></small>
+<script>
+jQuery('#<?php echo $this->getName(); ?>').keyup(function () {
+    var left = <?php echo $maxChars; ?> - jQuery(this).val().length;
+    /*if (left < 0) {
+        left = 0;
+    }*/
+    jQuery('#counter-<?php echo $this->getName(); ?>').text('<?php echo __('Characters left:');?> ' + left);
+}).keyup();
+</script>
+<?php
+}
+?>

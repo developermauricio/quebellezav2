@@ -1,0 +1,3 @@
+<?php
+$url = $this->engineFacade->getAdminUrl('admin.php?page='.$this->redirectPage);
+echo "<script>parent.self.location='$url';</script>";

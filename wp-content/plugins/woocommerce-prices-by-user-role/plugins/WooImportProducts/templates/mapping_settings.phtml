@@ -1,0 +1,109 @@
+<div class="custom_field_settings field_settings">
+    <h4><?php _e('Custom Field Settings', $this->engine->languageDomain); ?></h4>
+    <p>
+        <label for="custom_field_name_<?php echo $index; ?>">
+    		<?php _e(
+        		 'Name',
+        		 $this->engine->languageDomain
+			 ); ?>
+		 </label>
+        <input type="text" name="custom_field_name[<?php echo $index; ?>]" 
+        	id="custom_field_name_<?php echo $index; ?>" 
+        	value="<?php echo ($isFirstRowHeader) ? $firstRow[$index] : ''; ?>" />
+    </p>
+    
+    <?php 
+    $isCheked = false;
+    if (!empty($options['attributes']) && !empty($options['columns'][$index]['name'])) {
+        $attributeName = $options['columns'][$index]['name'];
+        if (!empty($options['attributes'][$attributeName])) {
+            $attribute = $options['attributes'][$attributeName];
+            $isCheked = $attribute['is_visible'];
+        }
+       
+    }
+    ?>
+    <p>
+        <input type="checkbox" 
+        	   name="custom_field_visible[<?php echo $index; ?>]"
+        	   id="custom_field_visible_<?php echo $index; ?>"
+        	   value="1" 
+        	   <?php if ($isCheked) {?> checked="checked"<?php } ?> />
+        <label for="custom_field_visible_<?php echo $index; ?>">
+        	<?php echo $this->engine->getLang('Visible on the product page'); ?>
+		</label>
+    </p>
+    <p>
+    <?php 
+    $isCheked = false;
+    if (!empty($options['attributes']) && !empty($options['columns'][$index]['name'])) {
+        $attributeName = $options['columns'][$index]['name'];
+        if (!empty($options['attributes'][$attributeName])) {
+            $attribute = $options['attributes'][$attributeName];
+            $isCheked = $attribute['is_variation'];
+        }
+       
+    }
+    ?>
+        <input type="checkbox" 
+        	   name="custom_field_variation[<?php echo $index; ?>]"
+        	   id="custom_field_variation_<?php echo $index; ?>"
+        	   value="1" 
+        	   <?php if ($isCheked) {?> checked="checked"<?php } ?> />
+        <label for="custom_field_variation_<?php echo $index; ?>">
+        	<?php echo $this->engine->getLang('Used for variations'); ?>
+		</label>
+    </p>
+</div>
+
+<div class="product_image_settings field_settings">
+    <h4>
+		<?php _e(
+			 'Image Settings',
+			 $this->engine->languageDomain
+		 ); ?>
+	 </h4>
+    <p>
+        <input type="checkbox"
+        	  name="product_image_set_featured[<?php echo $index; ?>]"
+        	  id="product_image_set_featured_<?php echo $index; ?>" 
+        	  value="1" checked="checked" />
+        <label for="product_image_set_featured_<?php echo $index; ?>">
+        		<?php _e(
+        			 'Set First Image as Featured',
+        			 $this->engine->languageDomain
+				 ); ?>
+		 </label>
+    </p>
+    <p>
+        <input type="checkbox" 
+        	 name="product_image_skip_duplicates[<?php echo $index; ?>]" 
+        	 id="product_image_skip_duplicates_<?php echo $index; ?>"
+        	 value="1" checked="checked" />
+        <label for="product_image_skip_duplicates_<?php echo $index; ?>">
+        		<?php _e('Skip Duplicate Images',
+        		 $this->engine->languageDomain
+			 ); ?>
+	 	</label>
+    </p>
+</div>
+
+<div class="post_meta_settings field_settings">
+    <h4>
+		<?php _e(
+			 'Post Meta Settings',
+			 $this->engine->languageDomain
+		 ); ?>
+ 	</h4>
+    <p>
+        <label for="post_meta_key_<?php echo $index; ?>">
+        	<?php _e(
+        		'Meta Key', $this->engine->languageDomain
+			); ?>
+		</label>
+        <input type="text"
+        	   name="post_meta_key[<?php echo $index; ?>]"
+        	   id="post_meta_key_<?php echo $index; ?>"
+        	   value="<?php echo ($isFirstRowHeader) ? $firstRow[$index] : ''; ?>"/>
+    </p>
+</div>

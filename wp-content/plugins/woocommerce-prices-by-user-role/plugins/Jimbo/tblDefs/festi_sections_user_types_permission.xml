@@ -1,0 +1,58 @@
+<?php
+$plugin = Core::getInstance()->getSystemPlugin();
+$tableName = $plugin->getSetting('users_table');
+$typesTableName = $plugin->getSetting('users_types_table');
+?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<table  charset="UTF-8" 
+        name="festi_sections_user_types_permission" 
+        primaryKey="id"
+        defaultOrderField="id" 
+        defaultOrderDirection="ASC" 
+        rowsForPage="200">
+        
+    <relations>
+        <link type="parent" 
+              field="id_section" 
+              foreignTable="festi_sections" 
+              foreignField="id" />
+    </relations>
+    
+    <fields>
+        <field  type="foreignKey" 
+                name="id_user_type"
+                foreignTable="<?php echo $typesTableName; ?>"
+                foreignKeyField="id"
+                foreignValueField="caption"
+                sorting="true"
+                filter="select"
+                caption="<?php echo __('User Type'); ?>"
+                required="true"
+                width="50%" />
+        
+        <field type="select" 
+               name="value"
+               caption="<?php echo __('Permission');?>" 
+               width="45%" 
+               required="true">
+            <option id="2"><?php echo __('Read'); ?></option>
+            <option id="4"><?php echo __('Write'); ?></option>
+            <option id="6"><?php echo __('Execute'); ?></option>
+        </field>       
+               
+    </fields>
+    
+    <actions>
+        <action type="list" caption="<?php echo __('Section Permission By User Type'); ?>" />
+        
+        <action type="parent"  
+                caption="<?php echo __('Sections'); ?>" 
+                relation="festi_sections" 
+                relationType="parent" />
+        
+        <action type="insert" caption="<?php echo __('New'); ?>" />
+        <action type="edit" caption="<?php echo __('Edit'); ?>" />
+        <action type="remove" caption="<?php echo __('Remove'); ?>" />
+    </actions> 
+    
+</table>

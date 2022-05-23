@@ -1,0 +1,50 @@
+<?php
+$attributes = $this->getElementAttributes();
+$ajaxHtml = "";
+if ($this->get('ajaxChild')) {
+    $params = array(
+        Store::ACTION_KEY_IN_REQUEST => Store::ACTION_FOREIGN_KEY_LOAD,
+        'ajaxChild' => $this->get('ajaxChild'),
+        'ajaxParent' => $this->getName()
+    );
+
+    $params = array(
+        $this->getStore()->getIdent() => $params
+    );
+
+    $url = $this->getStore()->getOption('current_url');
+
+    $url = Core::getInstance()->getUrl($url, $params);
+
+    $ajaxHtml = 'onChange="dbaForeignKeyLoad(\''.$url.'\', this.value);"';
+}
+
+$ajaxHtml2 = empty($this->attributes['ajaxChild']) ? '' : '<option '.($value === false ? ' selected ' : '').' value="">';
+$result = '<select class="form-control '.$this->getCssClassName().'" name="'.$this->getName().'" id="'.$this->getName().'" '.$ajaxHtml.' '.$attributes.'>' . $ajaxHtml2;
+
+if ($this->get('allowEmpty')) {
+    $result .= '<option value=""></option>';
+}
+
+foreach ($this->keyData as $key => $val) {
+    $selected = ($key == $foreignValue) ? 'selected' : '';
+    $result .= '<option value="'.$key.'" '.$selected.'>'.$val."</option>\n";
+}
+$result .= '</select>';
+
+if ( (!empty($this->attributes['ajaxChild'])) && (!empty($value)) ) {
+    //$GLOBALS['dba_afetrpatyjs'] .= '<script>dbaForeignKeyLoad(\''.$this->attributes['ajaxChild'].'\', "'.$this->getName().'", "'.$value.'")</script>';
+    //$GLOBALS['dba_afetrpatyjs'] .= 'dbaForeignKeyLoad(\''.$url.'\', \''.$foreignValue.'\');';
+}
+
+echo $result;
+
+if ($this->get('ajaxChild') && !empty($value)) {
+    ?>
+    <script>
+        jQuery(document).ready(function() {
+            dbaForeignKeyLoad('<?php echo $url; ?>', '<?php echo $foreignValue; ?>');
+        });
+    </script>
+<?php
+}

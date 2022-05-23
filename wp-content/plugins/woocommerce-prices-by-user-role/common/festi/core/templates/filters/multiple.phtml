@@ -1,0 +1,26 @@
+<?php
+$storeIdent = $field->getStore()->getIdent();
+?>
+
+<div class="b-db-filter-multiple">
+    <select name="<?php echo $storeIdent; ?>[filter][<?php echo $field->getFilterKey(); ?>][]"
+            class="db-filed-filter db-filed-filter-<?php echo $field->getType()?>"
+            multiple="multiple"
+            form="dgs-<?php echo $storeIdent ?>-filters" >
+        <option value="">...</option>
+        <?php
+        $filterValues = $field->getFilterValues();
+        if (!empty($filterValues)) {
+            foreach ($filterValues as $key => $value) {
+                $selected = "";
+                if ($field->filterValue && in_array($key, $field->filterValue)) {
+                    $selected = ' selected="selected"';
+                }
+                ?>
+                <option value="<?php echo $key; ?>"<?php echo $selected; ?>><?php echo $value; ?></option>
+                <?php
+            }
+        }
+        ?>
+    </select>
+</div>

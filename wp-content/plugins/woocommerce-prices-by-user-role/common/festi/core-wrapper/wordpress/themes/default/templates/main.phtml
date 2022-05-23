@@ -1,0 +1,91 @@
+<div class="wrap">
+<!-- 
+	<link rel="stylesheet" type="text/css" href="<?php echo $info['theme_url']?>../../css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="<?php echo $info['engine_url']?>js/calendar/calendar.css">
+    <script type="text/javascript" src="<?php echo $info['engine_url']?>js/calendar/calendar.js"></script>
+    <script type="text/javascript" src="<?php echo $info['engine_url']?>js/calendar/lang/calendar-en.js"></script>
+    <script type="text/javascript" src="<?php echo $info['engine_url']?>js/calendar/calendar_add.js"></script>
+
+    <script type="text/javascript" src="<?php echo $info['engine_url']?>js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo $info['engine_url']?>js/ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php echo $info['engine_url']?>js/qtip2/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="<?php echo $info['engine_url']?>js/jimbo.js"></script>
+    
+
+    <link rel="stylesheet" type="text/css" href="<?php echo $info['engine_url']?>js/qtip2/jquery.qtip.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $info['engine_url']?>js/ui/css/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $info['theme_url']?>../../css/bootstrap.css" />
+    <script type="text/javascript" src="<?php echo $info['engine_url']?>bootstrap/js/bootstrap.min.js"></script>
+    
+     <script type="text/javascript" src="<?php echo $info['engine_url']?>js/notification/SmartNotification.js"></script>
+     <link rel="stylesheet" type="text/css" href="<?php echo $info['engine_url']?>js/notification/notifications.css" />
+ -->
+    <?php
+    if (!empty($info['css'])) {
+        foreach ($info['css'] as $path) {
+    ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo $path?>" />
+    <?php
+            
+        }
+    }
+    ?>
+    
+    <?php
+    if (!empty($info['js'])) {
+        foreach ($info['js'] as $path) {
+    ?>
+        <script type="text/javascript" src="<?php echo $path; ?>"></script>
+    <?php
+            
+        }
+    }
+    ?>
+    
+    
+    <script>
+        jQuery(document).ready(function() {
+            Jimbo.init({
+                mode: "jquery",
+                debug: true
+            });
+            
+            jQuery('.hui-btn').button();
+        });
+    </script>
+
+<div id="hld">
+    <?php
+        echo $this->plugin->jimbo->fetchNotifications();
+    ?>
+	<div class="wrapper">
+
+        <?php
+        if ($this->controller->user->isLogin()) {
+        ?>
+            <div id="header">
+            <div class="hdrl"></div>
+            <div class="hdrr"></div>
+            <?php
+            if ($this->controller->user->isLogin()) {
+                echo $this->controller->getPluginInstance('Jimbo')->fetchMenu('backend');
+            }
+            ?>
+        </div>
+        <?php
+        }
+        
+        if (!empty($this->controller->breadcrumbs)) {
+         echo $this->ui->breadcrumbs()
+              ->setItems($this->controller->breadcrumbs)
+              ->fetch();
+        }
+       
+        ?>
+		<div class="cc"><?php echo $content; ?></div>
+	</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>

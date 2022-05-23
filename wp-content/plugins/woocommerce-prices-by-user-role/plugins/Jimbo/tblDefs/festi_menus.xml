@@ -1,0 +1,106 @@
+<?php
+$plugin = Core::getInstance()->getSystemPlugin();
+$tableName = $plugin->getSetting('users_table');
+$typesTableName = $plugin->getSetting('users_types_table');
+
+$plugin->includeStatic('js/menus.js');
+?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<table name="festi_menus" 
+       charset="UTF-8"  
+       primaryKey="id"
+       defaultOrderField="order_n" 
+       defaultOrderDirection="ASC" 
+       plugin="Jimbo"
+       rowsForPage="200">
+
+    <relations>
+        <link type="parent" 
+              field="id_parent" 
+              foreignTable="festi_menus" 
+              foreignField="id" />
+        
+        <link type="child" 
+              field="id" 
+              foreignTable="festi_menus" 
+              foreignField="id_parent" 
+              cascade="true"
+              treeCaption="caption" />
+    </relations>
+    
+    <fields>
+        <field type="readonly" caption="<?php echo __l('ID'); ?>" name="id" trim="60" width="5%" required="true" sorting="true"/>
+        
+        <field  type="text" 
+                clicable="true" 
+                caption="<?php echo __l('Caption'); ?>" 
+                name="caption" 
+                width="20%" 
+                required="true"
+                filter="text" 
+                sorting="true" />
+                
+        <field type="text" caption="<?php echo __l('Url'); ?>" name="url" trim="60" width="30%" isnull="true" sorting="true"/>
+        
+        <field  type="foreignKey" 
+                name="id_section" 
+                caption="<?php echo __l('Permission Section')?>"
+                foreignTable="festi_sections" 
+                foreignKeyField="id" 
+                foreignValueField="caption" 
+                isnull="true"
+                allowEmpty="true"
+                width="20%" />
+                
+        <field  type="foreignKey" 
+                name="area" 
+                caption="<?php echo __l('Area')?>"  
+                foreignTable="festi_url_areas" 
+                foreignKeyField="ident" 
+                foreignValueField="ident" 
+                isnull="true"
+                allowEmpty="true"
+                filter="select"
+                width="10%" />
+                
+        <field  type="many2many" 
+                caption="<?php echo __l('Permissions'); ?>" 
+                linkTable="festi_menu_permissions" 
+                linkField="id_menu" 
+                linkForeignField="id_role" 
+                foreignTable="<?php echo $typesTableName; ?>" 
+                foreignKeyField="id" 
+                foreignValueField="caption" 
+                hide="true" />
+                
+        <field  type="textarea" 
+                name="description" 
+                caption="<?php echo __l('Description')?>" 
+                isnull="true" 
+                hide="true" />
+                
+        <field type="text" 
+                   caption="<?php echo __l('Order By'); ?>" 
+                   name="order_n" 
+                   width="10%" default="0"  
+                   sorting="true" />
+    </fields>
+    
+    <actions>
+        <action type="parent"  
+                caption="<?php echo __l('Parent'); ?>" 
+                relation="festi_menus" 
+                relationType="parent" />
+                
+        <action type="child"  
+                caption="<?php echo __l('Child Menu Items'); ?>" 
+                relation="festi_menus" 
+                relationType="child" />
+                
+        <action type="list"   caption="<?php echo __l("Menu's"); ?>" />
+        <action type="insert" caption="<?php echo __l('New Item'); ?>" />
+        <action type="edit"   caption="<?php echo __l('Edit Item'); ?>" />
+        <action type="remove" caption="<?php echo __l('Remove Item'); ?>" />
+    </actions> 
+    
+</table>

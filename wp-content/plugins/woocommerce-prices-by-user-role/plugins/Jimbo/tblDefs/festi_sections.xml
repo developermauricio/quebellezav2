@@ -1,0 +1,90 @@
+<?php
+$plugin =  Core::getInstance()->getPluginInstance('Jimbo');
+?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<table  charset="UTF-8" 
+        name="festi_sections" 
+        primaryKey="id"
+        defaultOrderField="id" 
+        defaultOrderDirection="ASC" 
+        rowsForPage="200">
+        
+	<relations>
+        <link type="child" 
+              field="id" 
+              foreignTable="festi_section_actions" 
+              foreignField="id_section" 
+              treeCaption="caption" />
+              
+        <link type="child" 
+              field="id" 
+              foreignTable="festi_sections_user_types_permission" 
+              foreignField="id_section" 
+              treeCaption="caption" />
+
+		<link type="child"
+			  field="id"
+			  foreignTable="festi_sections_user_permission"
+			  foreignField="id_section"
+			  treeCaption="caption" />
+    </relations>
+    
+    <fields>
+		<field type="text" 
+		       caption="<?php echo __('Caption'); ?>" 
+		       name="caption" 
+		       width="40%" 
+		       required="true" 
+		       filter="text" 
+		       clicable="true" 
+		       sorting="true" />
+		       
+	    <field type="text" 
+               caption="<?php echo __('Identifier'); ?>" 
+               name="ident" 
+               width="30%" 
+               regexp="^[a-z_]+$"
+               required="true" 
+               filter="text" 
+               clicable="true" 
+               sorting="true" />
+
+        <field type="select" 
+               name="mask"
+               caption="<?php echo __('Permission');?>" 
+               width="20%" 
+               required="true">
+			<option id="2"><?php echo __('Read'); ?></option>
+			<option id="4"><?php echo __('Write'); ?></option>
+			<option id="6"><?php echo __('Execute'); ?></option>
+        </field>
+	</fields>
+	
+	<actions>
+		<action type="list" caption="<?php echo __('Sections'); ?>" />
+		
+		<action type="child"  
+                caption="<?php echo __('Section Actions'); ?>" 
+                relation="festi_section_actions" 
+                relationType="child" />
+                
+       <action type="festi_sections_user_types_permission"  
+                caption="<?php echo __('Section Permission By User Type'); ?>" 
+                relation="festi_sections_user_types_permission" 
+                src="<?php echo $plugin->getStaticUrl('festi_sections_user_types_permission.png');?>"
+                mode="new"
+                relationType="child" />
+
+		<action type="festi_sections_user_permission"
+				caption="<?php echo __('Section Permission By User'); ?>"
+				relation="festi_sections_user_permission"
+				mode="new"
+				relationType="child" />
+
+
+		<action type="insert" caption="<?php echo __('Add'); ?>" />
+		<action type="edit" caption="<?php echo __('Edit'); ?>" />
+		<action type="remove" caption="<?php echo __('Remove'); ?>" />
+	</actions> 
+	
+</table>

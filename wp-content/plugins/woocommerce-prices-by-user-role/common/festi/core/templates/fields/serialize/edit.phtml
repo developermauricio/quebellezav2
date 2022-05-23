@@ -1,0 +1,81 @@
+<?php
+$attributes = $this->getElementAttributes();
+
+?>
+<div>
+    <div class="row no-margin serialize-inputs <?php echo 'serialize-inputs-'.$this->getName(); ?>">
+        
+        <div class="col-sm-3 no-padding">
+        	<input type="text" name="<?php echo $this->getName() ?>[key][]" value="" class="form-control key <?php echo $this->getCssClassName(); ?>" <?php echo $attributes; ?>/>
+        </div>
+        <div class="col-sm-6 ">
+        	<input type="text" name="<?php echo $this->getName() ?>[value][]" value="" class="form-control value <?php echo $this->getCssClassName(); ?>" <?php echo $attributes; ?>/>
+        </div>
+        
+        <div class="col-sm-3 no-padding text-right">
+        	<a class="btn btn-default remove-button" href="javascript:void(0);" >
+        		<i class="fa fa-minus"></i>
+        	</a>
+        	<a class="btn btn-default add-button" href="javascript:void(0);">
+        		<i class="fa fa-plus"></i>
+        	</a>
+        </div>
+    </div>
+</div>
+
+<script>
+(function (jQuery, window) {
+	'use strict';
+	jQuery.fn.serializeItems = function (items) {
+
+		var copyItem = jQuery(this)
+			, cloneItem = copyItem.clone()
+			, container = copyItem.parent()
+			, __init = function (items) {
+    
+    			items = !jQuery.isEmptyObject(items) ? items : {'':''};  
+    
+    			copyItem.remove();
+    			jQuery.each(items, function (key, value) {
+    				createNewItem(key, value);
+    			});
+    		}
+    		, createNewItem = function (key, value) {
+    
+    			var item = cloneItem.clone();
+    
+    			jQuery('.key', item).val(key);
+    			jQuery('.value', item).val(value);
+    
+    			jQuery('.add-button', item).on('click', function () {
+    				createNewItem('', '');
+    			});
+    
+    			jQuery('.remove-button', item).on('click', function () {
+    				 removeItem(item);
+    			});
+    
+    			container.append(item);
+    			recalculateBtnClasses();
+    		}
+    		, removeItem = function (item) {
+    			container.children('.serialize-inputs').size() > 1 && item.remove();
+    			recalculateBtnClasses();
+    		}
+    		, recalculateBtnClasses = function () {
+    			var btns = jQuery('.remove-button', container);
+    			btns.toggleClass('disabled', btns.size() <= 1);
+    		};
+
+        __init(items);
+	};
+})(jQuery, window);
+</script>
+
+<script>
+jQuery(function () {
+	var itemSelector = '.serialize-inputs-<?php echo $this->getName();?>';
+	var items = <?php echo json_encode($values); ?>;
+	jQuery(itemSelector).serializeItems(items);
+});
+</script>

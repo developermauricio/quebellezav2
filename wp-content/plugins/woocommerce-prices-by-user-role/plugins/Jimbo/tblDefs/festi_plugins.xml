@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table  charset="UTF-8" 
+        name="festi_plugins" 
+        primaryKey="id"
+        defaultOrderField="status" 
+        defaultOrderDirection="ASC" 
+        rowsForPage="20">
+
+    <fields>
+        <field type="text" 
+               filter="text" 
+               caption="<?php echo __('Name'); ?>" 
+               name="ident" 
+               required="true" 
+               sorting="true" 
+               onlyList="true"
+               width="70%" />
+        
+        <field type="file" 
+               name="plugin" 
+               hide="true" 
+               caption="<?php echo __('Zip')?>" 
+               required="true"
+               isCustom="true"  />
+        
+        <field type="select" filter="select" caption="<?php echo __('Status');  ?>" sorting="true" name="status" width="30%"  required="true" >
+            <option id="active"><?php echo __('Active'); ?></option>
+            <option id="hidden"><?php echo __('Disable'); ?></option>
+        </field>
+    </fields>
+    
+    <listeners>
+        <listener event="<?php echo Store::EVENT_PREPARE_ACTION_REQUEST; ?>"
+                  plugin="<?php echo $plugin; ?>"
+                  method="onUploadPlugin" />
+                  
+       <listener event="<?php echo Store::EVENT_BEFORE_INSERT; ?>"
+                  plugin="<?php echo $plugin; ?>"
+                  method="onInstallPlugin" />
+                  
+       <listener event="<?php echo Store::EVENT_BEFORE_UPDATE; ?>"
+                  plugin="<?php echo $plugin; ?>"
+                  method="onInstallPlugin" />
+    </listeners>              
+    <actions>
+        
+       <!--  <action type="menus" 
+                caption="<?php echo __("Menus's"); ?>" 
+                view="top" 
+                link="<?php echo htmlspecialchars(Core::getInstance()->getUrl('/festi/festi_menus/Jimbo/')); ?>"
+                mode="new" />
+        
+        <action type="update_plugins" 
+                caption="<?php echo __("Update Plugin's"); ?>" 
+                view="top" 
+                link="<?php echo Core::getInstance()->getUrl('/festi/install/'); ?>"
+                mode="new" /> 
+           
+        <action type="sections" 
+                caption="<?php echo __("Sections"); ?>" 
+                view="top" 
+                link="<?php echo htmlspecialchars(Core::getInstance()->getUrl('/festi/festi_sections/Jimbo/')); ?>"
+                mode="new" />
+                     
+        <action type="url_rules" 
+                caption="<?php echo __("Url's"); ?>" 
+                view="top" 
+                link="<?php echo htmlspecialchars(Core::getInstance()->getUrl('/festi/festi_url_rules/Jimbo/')); ?>"
+                mode="new" />-->
+                
+        <action type="list" caption="<?php echo __('Plugins'); ?>" />
+        <action type="insert" caption="<?php echo __('Add New'); ?>" />
+        <action type="edit" caption="<?php echo __('Edit'); ?>" />
+        <action type="remove" caption="<?php echo __('Remove'); ?>" />
+    </actions> 
+    
+</table>

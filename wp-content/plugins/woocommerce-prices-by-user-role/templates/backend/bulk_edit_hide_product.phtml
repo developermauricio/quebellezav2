@@ -1,0 +1,33 @@
+<fieldset class="inline-edit-col-center">
+    <div class="inline-edit-col">
+        <span class="title inline-edit-categories-label">
+            <?php 
+            _e(
+                'Hide Product Per Role',
+                $this->languageDomain
+                );
+            ?>
+        </span>
+        <ul class="cat-checklist product_shipping_class-checklist" id="festi-bulk-checkbox-list">
+        <?php foreach ($roles as $roleKey => $role) { ?>
+            <li class="popular-category">
+               <?php
+                $ident = PRICE_BY_ROLE_HIDDEN_PRODUCT_META_KEY;
+                $ident = $ident.'['.$roleKey.']';
+                ?>
+                <label for="<?php echo $ident; ?>">
+                <input data-role="<?php echo $roleKey; ?>" 
+                       name="<?php echo $ident; ?>"
+                       id="<?php echo $ident; ?>"
+                       type="checkbox" value="1" /> 
+                <span class="festi-user-role-prices-lable">
+                   <?php echo $role['name']; ?>
+                </span>
+                </label>
+            </li>
+        <?php } ?>
+        </ul> 
+    </div>
+</fieldset>
+
+   

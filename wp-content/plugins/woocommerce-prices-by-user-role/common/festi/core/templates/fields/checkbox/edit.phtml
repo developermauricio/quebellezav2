@@ -1,0 +1,19 @@
+<?php
+echo '<label class="checkbox-inline"><input type="checkbox" class="i-checkbox" '.$checked.' id="'.$this->getName().'" name="'.$this->getName().'" value="1" /></label>';
+
+$disclaimer = $this->get('disclaimer');
+?>
+<?php
+if ($disclaimer) {
+?>
+    <span class="glyphicon glyphicon-info-sign glyphicon-<?php echo $this->getSelectorPostfix() ?>" data-toggle="tooltip" data-placement="right" data-original-title="<?php echo $disclaimer; ?>" ></span>
+    <script>
+    jQuery(document).ready(function() {
+        jQuery(".glyphicon-<?php echo $this->getSelectorPostfix() ?>").tooltip({
+            'container':'body'
+        });
+    });
+    </script>
+<?php
+}
+?>

@@ -1,0 +1,18 @@
+<section id="widget-grid" class="b-stage-layout-rows">
+<?php 
+foreach ($grid as $rowIndex => $columns) {
+    ?>
+    <div class="row">
+    <?php
+    foreach ($columns as $columnIndex => $cell) {
+        ?>
+        <div class="col-md-<?php echo $cell['length']?>"><?php echo $cell['content']?></div>
+        
+        <?php 
+    }
+    ?>
+    </div>
+    <?php
+}
+?>
+</section>

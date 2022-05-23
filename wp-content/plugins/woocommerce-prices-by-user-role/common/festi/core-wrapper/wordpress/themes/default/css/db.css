@@ -1,0 +1,85 @@
+.b-db-table .e-db-list-table {
+    display: table;
+    width:100%;
+}
+
+.b-db-table .e-db-table-row {
+    display: table-row;
+}
+
+.b-db-table .e-db-table-cell {
+    display: table-cell;
+    border-bottom: 1px solid #ddd;
+    padding:3px 0px;
+}
+
+
+.b-db-table .e-db-table-group {
+    display: table-row-group;
+}
+
+
+.b-db-table .e-table-head {
+    font-weight:bold;
+}
+
+.b-db-table .e-table-head img {
+    vertical-align: text-top;
+}
+
+.db-submiter {
+    display:none;
+}
+
+.required input {
+    background-image: url('../images/required.gif');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.m-loading {
+    background-image: url('../images/loading-small.gif');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.e-table-empty {
+   
+}
+
+.label-required span {
+    background-image: url('../images/required.gif');
+    background-repeat: no-repeat;
+    background-position: right top;
+    padding-right:17px;
+}
+
+.f-db-form input[type="radio"], .f-db-form input[type="checkbox"] {
+	margin-top: 1px;
+}
+
+.field-invalid-value-message {
+	font-size:10px;
+	color: #FF0000;
+}
+
+.input-group-combobox .input-group-btn input {
+	width: 50px;
+}
+
+.custom-combobox-input {
+	background: #FFF;
+}
+
+.serialize-inputs .btn {
+	padding: 6px;
+}
+
+.serialize-inputs {
+	margin-bottom: 3px;
+}
+
+.f-db-form .input-group {
+	width:100%;
+}
+

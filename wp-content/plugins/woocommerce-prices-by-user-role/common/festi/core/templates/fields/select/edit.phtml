@@ -1,0 +1,32 @@
+<?php
+$css = "form-control";
+if (!empty($combobox)) {
+    $css = "";
+}
+
+$attributes = $this->getElementAttributes();
+
+$select = '<select class="'.$css.' '.$this->getCssClassName().'" id="'.$this->getName().'" name="'.$this->getName().'" '.$attributes.'>';
+if ($this->get('allowEmpty')) {
+    $select .= '<option value="">'.__l('...').'</option>';
+}
+
+foreach ($this->valuesList as $key => $val) {
+	$selected = ($key == $value) ? 'selected' : '';
+	$select .= '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+}
+$select .= '</select>';
+echo $select;   
+ 
+if (!empty($combobox)) {
+?>
+<script>
+jQuery(function() {
+    jQuery('#<?php echo $this->getName(); ?>').combobox({
+        'createNew':true
+    });
+});
+</script>
+<?php
+}
+?>

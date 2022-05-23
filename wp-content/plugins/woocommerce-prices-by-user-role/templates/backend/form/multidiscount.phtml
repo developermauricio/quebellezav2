@@ -1,0 +1,89 @@
+<?php
+
+if (array_key_exists('description', $item))
+{
+    ?>
+    <p class="description"><?php echo $item['description']; ?></p>
+    <?php
+}
+?>
+
+<table cellpadding="0" cellspacing="0" id="festi-user-role-prices-discount-roles">
+    <tbody>
+    <?php
+    foreach ($roles as $roleName => $role) {
+        ?>
+        <tr>
+            <th>
+                <span><?php echo $role['name'].":"; ?></span>
+            </th>
+            <td>
+                <?php
+
+                $columnKey = 'value';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue
+                );
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'currentValue' => $value
+                );
+
+                echo $this->fetch('form/input_number.phtml', $vars);
+
+                $columnKey = 'type';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue
+                );
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'item' => array(
+                        'values' => array(
+                            0 => __('%', $this->languageDomain),
+                            1 => $this->ecommerceFacade->getCurrencySymbol()
+                        )
+                    ),
+                    'currentValue' => $value
+                );
+
+                echo $this->fetch('form/input_select.phtml', $vars);
+                ?>
+                <label style="font-style: italic;">for price:</label>
+                <?php
+
+                $columnKey = 'priceType';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue,
+                    'regular'
+                );
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'item' => array(
+                        'values' => array(
+                            'regular' => __('regular', $this->languageDomain),
+                            'role' => __('role', $this->languageDomain)
+                        )
+                    ),
+                    'currentValue' => $value
+                );
+
+                echo $this->fetch('form/input_select.phtml', $vars);
+
+                ?>
+            </td>
+        </tr>
+    <?php }?>
+    </tbody>
+</table>

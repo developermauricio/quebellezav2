@@ -1,0 +1,9 @@
+<?php
+$storeIdent = $field->getStore()->getIdent();
+?>
+
+<input 	type="text"
+        name="<?php echo $storeIdent; ?>[filter][<?php echo $field->getFilterKey(); ?>]"
+        value="<?php echo htmlspecialchars($field->filterValue); ?>"
+        class="<?php echo $field->getFilterCssClassName(); ?>" 
+        form="dgs-<?php echo $storeIdent ?>-filters" />

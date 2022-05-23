@@ -1,0 +1,25 @@
+<script>
+    jQuery(function() {
+        jQuery("#<?php echo $this->getName() ?>").autocomplete({
+            source: function (request, response) {
+                var url = "<?php echo $this->getAutocompleteUrl(); ?>";
+
+                url += (url.indexOf('?') > -1) ? '&' : '?';
+
+                jQuery.getJSON(url + '<?php echo $this->store->createRequestKey('term'); ?>=' + request.term, function (data) {
+                    if (typeof data['results'] === "undefined") {
+                        console.error("Undefined results in response");
+                    } else {
+                        response(jQuery.map(data['results'], function (value, key) {
+                            return {
+                                label: value,
+                                value: key
+                            };
+                        }));
+                    }
+                });
+            },
+            minLength: <?php echo $this->get(static::OPTION_AUTOCOMPLETE_MIN_LENGTH); ?>
+        });
+    });
+</script>

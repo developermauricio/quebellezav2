@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table  charset="UTF-8" 
+        name="festi_url_areas" 
+        primaryKey="id"
+        defaultOrderField="id" 
+        defaultOrderDirection="ASC" 
+        rowsForPage="200">
+    
+    <fields>
+        
+        <field  type="text" 
+                caption="<?php echo __l('Identifier'); ?>"
+                name="ident"  
+                width="90%" 
+                required="true" />
+    </fields>
+    
+    <actions>
+        <action type="url_rules" 
+                caption="<?php echo __l("Url's"); ?>" 
+                view="top" 
+                link="/festi/festi_url_rules/Jimbo/"
+                mode="new" />
+                
+        <action type="list" caption="<?php echo __l("Url's Areas"); ?>" />
+        <action type="insert" caption="<?php echo __l('New'); ?>" />
+        <action type="edit" caption="<?php echo __l('Edit'); ?>" />
+        <action type="remove" caption="<?php echo __l('Remove'); ?>" />
+    </actions> 
+    
+</table>

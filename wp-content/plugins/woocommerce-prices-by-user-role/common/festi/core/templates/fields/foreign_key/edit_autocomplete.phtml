@@ -1,0 +1,91 @@
+<?php
+$attributes = $this->getElementAttributes();
+
+$result = '<input type="hidden" class="'.$this->getCssClassName().'" name="'.$this->getName().'" id="'.$this->getName().'" '.$attributes.' value="'.$foreignValue.'">';
+
+echo $result;
+
+$autocompleteUrl = $this->getAutocompleteUrl();
+
+$loadChildUrl = null;
+if ($this->get('ajaxChild')) {
+    $params = array(
+        Store::ACTION_KEY_IN_REQUEST => Store::ACTION_FOREIGN_KEY_LOAD,
+        'ajaxChild'       => $this->get('ajaxChild'),
+        'ajaxChildValues' => $ajaxChildValues ?? null,
+        'ajaxParent'      => $this->getName()
+    );
+    $params = array(
+        $this->getStore()->getIdent() => $params
+    );
+    $url = $this->getStore()->getOption('current_url');
+    
+    $loadChildUrl = Core::getInstance()->getUrl($url, $params);
+}
+
+?>
+<script>
+    jQuery(document).ready(function() {
+        if (typeof(jQuery.fn.select2) !== "undefined") {
+            jQuery('.f-db-form <?php echo $this->getCssSelector();?>').select2({
+                id: "value",
+                ajax: {
+                    url: '<?php echo $autocompleteUrl; ?>',
+                    dataType: 'json',
+                    data: function (term, page) {
+                        return {
+                            "<?php echo $this->store->createRequestKey('term'); ?>": term
+                        };
+                    },
+                    results: function (data, page) {
+                        return {results: data.results};
+                    }
+                },
+
+                initSelection: function(element, callback) {
+                    var value = jQuery(element).val();
+
+                    if (value !== "") {
+                        var url = "<?php echo $this->getAutocompleteUrl(); ?>";
+                        url += (url.indexOf('?') > -1) ? '&' : '?';
+                        url += '<?php echo $this->store->createRequestKey('value'); ?>=' + value;
+
+                        jQuery.ajax(url, {
+                            dataType: "json"
+                        }).done(function(data) {
+                            if (typeof data['results'] === "undefined" || typeof data['results'][0] == "undefined") {
+                                console.error("Not found select2 value " + value);
+                            } else {
+                                callback(data['results'][0]);
+                            }
+                        });
+                    }
+                },
+                formatResult: function (repo) {
+                    return repo.key;
+                },
+                formatSelection: function (repo) {
+                    return repo.key;
+                },
+                showSearchInput: true,
+                width: '100%'
+            })
+            <?php if ($loadChildUrl) {?>
+            .on('change', function (ev) {
+				dbaForeignKeyLoad('<?php echo $loadChildUrl;?>', ev.target.value);
+            });
+            <?php }?>
+        } else {
+            console.error("Not found select2 lib");
+        }
+
+        <?php 
+        if ($this->get('ajaxChild') && !empty($foreignValue)) {
+        ?>
+        dbaForeignKeyLoad('<?php echo $loadChildUrl; ?>', '<?php echo $foreignValue; ?>');
+        <?php
+        }
+        ?>
+    });
+</script>
+

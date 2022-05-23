@@ -1,0 +1,53 @@
+AddDefaultCharset utf-8
+
+DirectoryIndex index.php
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+<ifModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header always append X-Frame-Options SAMEORIGIN
+    Header set X-Content-Type-Options: "nosniff"
+    #Header unset Content-Security-Policy
+    #Header add Content-Security-Policy "default-src 'self' 'unsafe-inline' www.google-analytics.com *.googleapis.com *.gstatic.com *.addthis.com; script-src 'self' 'unsafe-inline' www.google-analytics.com *.cloudfront.net *.googleapis.com *.googlecode.com *.google.com *.addthis.com;  img-src 'self' data: www.google-analytics.com *.cloudfront.net *.amazonaws.com *.doubleclick.net *.gstatic.com *.addthis.com"
+    #Header unset X-Content-Security-Policy
+    #Header add X-Content-Security-Policy "default-src 'self' 'unsafe-inline' www.google-analytics.com *.googleapis.com *.gstatic.com *.addthis.com; script-src 'self' 'unsafe-inline' www.google-analytics.com *.cloudfront.net *.googleapis.com *.googlecode.com *.google.com *.addthis.com;  img-src 'self' data: www.google-analytics.com *.cloudfront.net *.amazonaws.com *.doubleclick.net *.gstatic.com *.addthis.com"
+    #Header unset X-WebKit-CSP
+    #Header add X-WebKit-CSP "default-src 'self' 'unsafe-inline' www.google-analytics.com *.googleapis.com *.gstatic.com *.addthis.com; script-src 'self' 'unsafe-inline' www.google-analytics.com *.cloudfront.net *.googleapis.com *.googlecode.com *.google.com *.addthis.com;  img-src 'self' data: www.google-analytics.com *.cloudfront.net *.amazonaws.com *.doubleclick.net *.gstatic.com *.addthis.com"
+</ifModule>
+
+<Files ~ "(sql)$">
+    Deny from all
+</Files>
+
+<Files ~ "install.sh|README.md|common.php|config.php|local.php">
+    Deny from all
+</Files>
+
+Options -Indexes
+RewriteEngine on
+Options +FollowSymLinks
+RewriteBase /
+
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.* 
+RewriteRule .* ? [F,L]
+
+RewriteRule ^libs/(.*)$ - [F]
+RewriteRule ^cron/(.*)$ - [F]
+RewriteRule ^dump/(.*)$ - [F]
+
+
+RewriteRule ^%dashboard_base_http%(.*)\.(css|js|php|jpg|gif|jpeg|png|zip|gz|swf|xml|txt|ttf|woff|woff2|htc|svg|eot|ico|pdf)$ $1.$2 [L]
+RewriteRule ^%dashboard_base_http% dashboard.php [L,QSA]
+
+RewriteRule \.(css|js|php|jpg|gif|jpeg|png|zip|gz|swf|xml|txt|ttf|woff|woff2|htc|svg|eot|ico|pdf)$ - [L]
+RewriteRule .* index.php [L,QSA]

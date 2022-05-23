@@ -1,0 +1,7 @@
+Options -Indexes
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !/public
+RewriteCond %{REQUEST_URI} !/docs
+RewriteCond %{REQUEST_URI} !/tools/compatibility/wordpress
+RewriteRule .* - [F]

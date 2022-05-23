@@ -1,0 +1,30 @@
+2022-05-03T16:39:28+00:00 CRITICAL Uncaught Error: Failed opening required 'D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms/src/WPForms.php' (include_path='D:\SERVIDOR\php\PEAR') in D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\wpforms.php:290
+Stack trace:
+#0 D:\Servidor\Htdocs\quebelleza\wp-admin\includes\plugin.php(2288): include_once()
+#1 D:\Servidor\Htdocs\quebelleza\wp-admin\includes\plugin.php(659): plugin_sandbox_scrape('wpforms/wpforms...')
+#2 D:\Servidor\Htdocs\quebelleza\wp-admin\plugins.php(58): activate_plugin('wpforms/wpforms...', 'http://localhos...', false)
+#3 {main}
+  thrown en D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\wpforms.php en la línea 290
+
+2022-05-03T16:39:30+00:00 CRITICAL Uncaught Error: Failed opening required 'D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms/vendor/woocommerce/action-scheduler/action-scheduler.php' (include_path='D:\SERVIDOR\php\PEAR') in D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php:225
+Stack trace:
+#0 D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php(181): WPForms\WPForms->includes_magic()
+#1 D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php(117): WPForms\WPForms->includes()
+#2 D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php(425): WPForms\WPForms::instance()
+#3 D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\wpforms.php(292): wpforms()
+#4 D:\Servidor\Htdocs\quebelleza\wp-admin\includes\plugin.php(2288): include_once('D:\\Servidor\\Htd...')
+#5 D:\Servidor\Htdocs\quebelleza\wp-admin\plugins.php(192): plugin_sandbox_scrape('wpforms/wpforms...')
+#6 {main}
+  thrown en D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php en la línea 225
+
+2022-05-03T16:39:31+00:00 CRITICAL Uncaught Error: Failed opening required 'D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms/vendor/woocommerce/action-scheduler/action-scheduler.php' (include_path='D:\SERVIDOR\php\PEAR') in D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php:225
+Stack trace:
+#0 D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php(181): WPForms\WPForms->includes_magic()
+#1 D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php(117): WPForms\WPForms->includes()
+#2 D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php(425): WPForms\WPForms::instance()
+#3 D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\wpforms.php(292): wpforms()
+#4 D:\Servidor\Htdocs\quebelleza\wp-admin\includes\plugin.php(2288): include_once('D:\\Servidor\\Htd...')
+#5 D:\Servidor\Htdocs\quebelleza\wp-admin\plugins.php(192): plugin_sandbox_scrape('wpforms/wpforms...')
+#6 {main}
+  thrown en D:\Servidor\Htdocs\quebelleza\wp-content\plugins\wpforms\src\WPForms.php en la línea 225
+

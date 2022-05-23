@@ -1,0 +1,43 @@
+<?php
+$attributes = $this->getElementAttributes();
+
+$disclaimer = $this->get('disclaimer');
+?>
+<div class="input-group input-group-small input-group-<?php echo $this->getName() ?>">
+    <span class="input-group-addon input-group-currency"><?php echo $this->getCurrencySymbol(); ?></span>
+    <input type="text" id="<?php echo $this->getName() ?>" name="<?php echo $this->getName() ?>" value="<?php echo $value; ?>" step="any" class="form-control <?php echo $this->getCssClassName(); ?>"<?php echo $attributes; ?> />
+    <?php
+    if ($disclaimer) {
+    ?>
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign glyphicon-<?php echo $this->getName() ?>" data-toggle="tooltip" data-placement="right" title="<?php echo $disclaimer; ?>" ></span></span>
+    <?php
+    }
+    ?>
+</div>
+
+<?php
+if ($disclaimer) {
+?>
+    <script>
+        jQuery(".glyphicon-<?php echo $this->getName() ?>").tooltip({
+            'container':'body'
+        });
+    </script>
+<?php
+}
+?>
+
+
+
+<?php
+/*
+<script>
+jQuery(function() {
+    jQuery( "#<?php echo $this->getName() ?>" ).spinner({
+        min:0,
+        step: 50
+    });
+});
+</script>
+ */
+?>

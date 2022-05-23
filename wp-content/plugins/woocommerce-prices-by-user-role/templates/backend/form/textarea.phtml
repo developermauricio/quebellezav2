@@ -1,0 +1,11 @@
+<?php 
+$class = (isset($item['class'])) ? $item['class'] : '';
+
+$data = (isset($item['event'])) ? ' data-event="'.$item['event'].'"' : '';
+
+if (empty($currentValue)) {
+    $currentValue = '';
+}
+
+?>
+<textarea name="<?php echo $ident; ?>" <?php echo $data;?> class="<?php echo $class ;?> " cols="45" rows="4"><?php echo $currentValue; ?></textarea>

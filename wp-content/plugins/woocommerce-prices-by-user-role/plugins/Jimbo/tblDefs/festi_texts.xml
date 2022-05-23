@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table  charset="UTF-8" 
+        name="festi_texts" 
+        primaryKey="id"
+        defaultOrderField="id" 
+        defaultOrderDirection="DESC" 
+        grideditor="true"
+        rowsForPage="20">
+
+    <fields>
+        <field type="text" filter="text" caption="<?php echo __('Text'); ?>" name="ident" required="true" sorting="true" width="20%"/>
+        <field type="textarea" filter="text" caption="<?php echo __('Name'); ?>" name="text" required="true"  width="80%"/>
+    </fields>
+    
+    <actions>
+        <action type="list" caption="<?php echo __('Text'); ?>" />
+        <action type="insert" caption="<?php echo __('New'); ?>" />
+        <action type="edit" caption="<?php echo __('Edit'); ?>" />
+        <action type="remove" caption="<?php echo __('Remove'); ?>" />
+    </actions>
+</table>

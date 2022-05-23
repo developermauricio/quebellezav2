@@ -1,0 +1,74 @@
+<div id="festi-user-role-prices-product-tab-content" class="panel woocommerce_options_panel">
+    <div  class="festi-user-role-prices-general-settings">Prices by User Role 
+        <a href="<?php echo get_admin_url(); ?>admin.php?page=festi-user-role-prices&tab=hidingRules">
+            <?php _e("Hiding Rules"); ?>
+        </a>
+    </div>
+    <p>
+        <?php
+        $disabled = ($this->hasOnlyRegisteredUsersOptionInPluginSettings($settings)) ? true : false;
+        
+        $vars = array(
+            'ident' => PRICE_BY_ROLE_HIDDEN_RICE_META_KEY.'[onlyRegisteredUsers]',
+            'item' => array(
+                'lable' => __(
+                    'Show Prices only for Registered Users',
+                    $this->languageDomain
+                ),
+                'disabled' => $disabled,
+                'disabledInfo' => __(
+                    'To activate option per-product - '.
+                    'please disable &quot;Show Prices for all products only '.
+                    'for Registered Users&quot; in Hiding Rules',
+                    $this->languageDomain
+                ),
+            ),
+        );
+        
+        if ($onlyRegisteredUsers) {
+            $vars['currentValue'] = $onlyRegisteredUsers;
+        }
+        
+        echo $this->fetch('form/input_checkbox.phtml', $vars);
+        ?>
+    </p>
+    <p class="festi-user-role-prices-option-name">
+        <strong>
+            <?php
+            _e(
+                'Hide Prices for User Roles:',
+                $this->languageDomain
+            );
+            ?>
+        </strong>
+    </p>
+    <?php
+    $vars = array(
+        'ident' => PRICE_BY_ROLE_HIDDEN_RICE_META_KEY.'[hidePriceForUserRoles]',
+        'item' => array(
+            'deleteButton'  => false,
+            'checkDisabled' => true,
+            'disabledInfo' => __(
+                'To Enable this role you need disable hiding rule for '.
+                'all products',
+                $this->languageDomain
+            )
+        ),
+        'settings' => $settings,
+        'roles' => $this->getUserRoles(),
+    );
+    
+    if ($hidePriceForUserRoles) {
+        $vars['currentValue'] = $hidePriceForUserRoles;
+    }
+    
+    echo $this->fetch('form/multicheck.phtml', $vars);
+
+    $settingsForHideProduct['isIgnoreHideOptionByProduct'] = $isIgnoreHideOptionByProduct;
+
+    echo $this->fetch(
+        'product_tab_content_hide_product.phtml',
+        $settingsForHideProduct
+    );
+    ?>
+</div>

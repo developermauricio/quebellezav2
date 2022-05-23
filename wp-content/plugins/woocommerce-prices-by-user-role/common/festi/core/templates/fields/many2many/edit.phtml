@@ -1,0 +1,7 @@
+<?php
+
+if ($this->hasAutocomplete()) {
+    echo $this->fetch('edit_autocomplete.phtml');
+} else {
+    echo $this->fetch('edit_default.phtml');
+}

@@ -1,0 +1,166 @@
+<?php if (!empty($licenseInfo)) { ?>
+<div class="price-by-user-role-registrarion">
+    <h2><?php echo __('ACTIVATE PRICE BY USER ROLE'); ?></h2>
+    <p>
+       <?php echo __('Congratulations! You are about to activate great '.
+                     'e-commerce plugin for WordPress. You will now receive '.
+                     'all the benefits of Price by User Role, including '.
+                     'regular updates and premium class support.');
+        ?> 
+    </p>
+    <p>
+        <i>
+        <?php 
+            echo sprintf(
+                __('Your license will activate Price by User Role on %s'),
+                 $_SERVER['HTTP_HOST']
+            );
+        ?>
+        </i>
+    </p>
+    
+    <?php 
+    if (!empty($newVersionLink)) {
+    ?>
+        <p class="info"><a href="<?php echo $newVersionLink; ?>" target="_blank">Found new version <b><?php echo $newVersion?></b>! You can download new version!</a>
+        </p>
+    <?php
+    }
+    ?>
+</div>
+<?php } ?>
+
+<form 
+    <?php if (!empty($licenseInfo)) { ?>style="display:none"<?php } ?> 
+    action="<?php if (!empty($apiUrl)) { echo $apiUrl; } ?>" 
+    method="POST" 
+    class="price-by-user-role-registrarion" >
+    <div >
+        <p>
+            <?php echo __('In order to receive all benefits of Prices by User Role 
+            you need to activate your copy of plugin. By activating of Prices by 
+            User Role license you will unlock premium options - direct plugin updates and 
+            <strong>access to official support.</strong>'); ?>
+        </p>
+        <br>
+        <p>
+            <button class="button button-primary button-hero button-updater" id="activate-license" type="submit" >
+                <?php echo __('Activate Prices by User Role'); ?>                    
+            </button>
+    
+            <img src="<?php echo $this->engineFacade->getSiteUrl();?>/wp-admin/images/wpspin_light.gif" class="price-by-user-role-registrarion-spinner" width="16" height="16" alt="spinner">
+        </p>
+    
+        <p class="description">
+            <?php echo __('Don\'t have valid license yet?'); ?>
+            <a href="http://bit.ly/2bVYazr" target="_blank">
+                <?php echo __('Purchase Prices by User Role'); ?>
+            </a>.
+        </p>
+       </div>
+       <input type="hidden" name="ip" value="<?php if (!empty($_SERVER['SERVER_ADDR'])) { echo $_SERVER['SERVER_ADDR']; } ?>" />
+       <input type="hidden" name="host" value="<?php if (!empty($_SERVER['SERVER_NAME'])) { echo $_SERVER['SERVER_NAME']; } ?>" />
+       <input type="hidden" name="request_uri" value="<?php if (!empty($_SERVER['REQUEST_URI'])) { echo $_SERVER['REQUEST_URI']; } ?>">
+</form>
+<div class="modal fade" id="no-license-dialog" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2><?php echo __('NO LICENSES FOUND'); ?></h2>
+                <p>
+                    <?php 
+                    echo __('It seems that you do not have any valid license 
+                            for Prices by User Role. <strong>Why do I need direct license?</strong> 
+                            Direct product license unlocks several benefits:'); 
+                    ?>
+                </p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="flash-point">
+                                    <?php echo __('Access official customer support'); ?>
+                                </div>
+                            </td>
+                            <td>  
+                                <div class="flash-point">
+                                    <?php echo __('Update Prices by User Role directly'); ?>
+                                </div>
+                            </td>
+                        </tr>        
+                    </tbody>
+                </table>
+                <br />
+                <a href="https://codecanyon.net/item/woocommerce-prices-by-user-role/8562616?ref=Festi-Team" class="btn btn-primary btn-lg" target="_blank">
+                    <span class="icon i-cart"></span>
+                    <span class="text-w-icon"><?php echo __('Purchase license'); ?></span>
+                </a>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="no-connect-api" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                <?php
+
+                if (!isset($statusAPI['message'])) {
+                    $statusAPI['message'] = '';
+                }
+                
+                echo __(
+                     $statusAPI['message'].
+                    '<p><a href="mailto::'.antispambot('support@festi.team').'">'.
+                    antispambot("support@festi.team").'</a></p>'
+                );
+                ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+jQuery(function() {
+    jQuery('#activate-license').on('click', function(e) {
+        e.preventDefault();
+        
+        var status = '<?php echo $statusAPI['status']; ?>';
+        
+        if (status == 'error') {
+            jQuery('#no-connect-api').modal('show');
+            return;
+        }
+
+        jQuery('form').submit(); 
+    })
+})
+</script>
+
+<?php if (!empty($_REQUEST['errors'])) { ?>
+<script>
+    jQuery(function() {
+        jQuery('#no-license-dialog').modal('show');
+        jQuery('#no-license-dialog').on('hidden.bs.modal', function () {
+            window.location.href = '?<?php echo $urlPage; ?>';
+        });
+    })
+</script>
+<?php } ?>
+<?php if (!empty($_REQUEST['code'])) { ?>
+    <script>
+       window.location.href = '?<?php echo $urlPage ?>';
+    </script>
+<?php } ?>

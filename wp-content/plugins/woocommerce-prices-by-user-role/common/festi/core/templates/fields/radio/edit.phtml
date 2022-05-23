@@ -1,0 +1,20 @@
+<?php 
+$attributes = $this->getElementAttributes();
+foreach ($this->valuesList as $key => $data) {
+    $checked = ($key == $value) ? 'checked' : '';
+?>
+<div class="radio">
+    <label>
+        <input type="radio" name="<?php echo $this->getName();?>" id="<?php echo $this->getName();?>_<?php echo $key;?>" value="<?php echo $key;?>" <?php echo $checked;?> <?php echo $attributes; ?> />
+        <?php 
+        echo '<span class="radio-caption">'.$data['caption'].'</span>';
+        
+        if (!empty($data['note'])) {
+            echo ': <span class="radio-note">'.htmlspecialchars($data['note']).'</span>';
+        }
+        ?>
+    </label>
+</div>
+<?php   
+}
+?>

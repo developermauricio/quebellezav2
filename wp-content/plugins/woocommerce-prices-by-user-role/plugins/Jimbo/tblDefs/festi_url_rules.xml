@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table  charset="UTF-8" 
+        name="festi_url_rules" 
+        primaryKey="id"
+        defaultOrderField="festi_url_rules.id" 
+        defaultOrderDirection="ASC" 
+        rowsForPage="200">
+    
+    <fields>
+        
+        <field  type="foreignKey" 
+                name="plugin"
+                foreignTable="festi_plugins"
+                foreignKeyField="ident"
+                foreignValueField="ident"
+                sorting="true"
+                filter="select"
+                caption="<?php echo __l('Plugin'); ?>"
+                required="true"
+                width="25%" />
+        
+        <field  type="text" 
+                caption="<?php echo __l('Method'); ?>"
+                name="method"  
+                width="30%" 
+                required="true" 
+                filter="text" />
+                
+        <field  type="text" 
+                caption="<?php echo __l('Pattern'); ?>" 
+                name="pattern" 
+                width="65%" 
+                required="true" />
+                
+         <field type="many2many" 
+                caption="<?php echo __l('Area'); ?>" 
+                linkTable="festi_url_rules2areas"
+                linkField="id_url_rule"
+                linkForeignField="area"
+                 
+                foreignTable="festi_url_areas" 
+                foreignKeyField="ident" 
+                foreignValueField="ident"
+                hide="true" />        
+                
+    </fields>
+    
+    <actions>
+        <action type="url_areas" 
+                caption="<?php echo __l("Areas"); ?>" 
+                view="top" 
+                link="<?php Core::getInstance()->getUrl('/festi/festi_url_areas/Jimbo/'); ?>"
+                mode="new" />
+                
+        <action type="list" caption="<?php echo __l("Urls Route"); ?>" />
+        <action type="insert" caption="<?php echo __l('New'); ?>" />
+        <action type="edit" caption="<?php echo __l('Edit'); ?>" />
+        <action type="remove" caption="<?php echo __l('Remove'); ?>" />
+    </actions> 
+    
+</table>

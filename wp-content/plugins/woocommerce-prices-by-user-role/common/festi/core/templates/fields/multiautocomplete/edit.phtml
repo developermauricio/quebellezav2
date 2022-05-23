@@ -1,0 +1,18 @@
+<?php
+$attributes = $this->getElementAttributes();
+?>
+<input type="text"
+       id="field-<?php echo $this->getName() ?>"
+       name="<?php echo $this->getName() ?>"
+       value="<?php echo $value; ?>"
+       class="form-control <?php echo $this->getCssClassName(); ?>"<?php echo $attributes; ?> />
+
+<script>
+jQuery(function() {
+    jQuery("#field-<?php echo $this->getName() ?>").tagsInput({
+        autocomplete_url: '<?php echo $this->get('autocompleteUrl'); ?>',
+        minChars: <?php echo $this->get('minLength'); ?>,
+        defaultText: '<?php echo $this->get('defaultText'); ?>'
+    });
+});
+</script>

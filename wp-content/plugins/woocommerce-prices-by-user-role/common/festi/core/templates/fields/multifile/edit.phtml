@@ -1,0 +1,40 @@
+<?php if (!empty($fileData)) { ?>
+    <div class="btn-group file-select-list-<?php echo $this->getName(); ?>">
+        <button type="button" class="btn btn-default remove-btn-<?php echo $this->getName(); ?>">
+            <i class="fa fa-cloud-download" aria-hidden="true">
+            </i>
+        </button>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <?php echo __('Files'); ?>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu file-list">
+            <?php foreach ($fileData as $fileName => $link) { ?>
+                <div class="input-group file-input" id="<?php echo $this->getName();?>_file">
+                        <a href="<?php echo $link; ?>"><?php echo $fileName; ?></a>
+                </div>
+            <?php } ?>
+            </ul>
+        </div>
+    </div>
+<?php } ?>
+<div id="<?php echo $this->getName();?>_file_upload" class="<?php if (!empty($fileData)) : ?>hidden<?php endif;?>">
+    <input multiple type="file" name="<?php echo $this->getName(); ?>[]"
+           class="form-control <?php echo $this->getCssClassName(); ?>" />
+    <input type="hidden" name="_<?php echo $this->getName(); ?>"
+           value='<?php echo $value; ?>' />
+</div>
+
+<script>
+    (function (jQuery, containerFieldId, uploadFieldId) {
+        const container = jQuery('.file-select-list-<?php echo $this->getName(); ?>');
+        const uploadContainer = jQuery('#' + uploadFieldId);
+        
+        jQuery('.remove-btn-<?php echo $this->getName(); ?> ', container).on('click', function () {
+            container.remove();
+            uploadContainer.removeClass('hidden')
+                .find('[type="hidden"]').val('');
+        });
+    })(jQuery, "<?php echo $this->getName();?>_file", "<?php echo $this->getName();?>_file_upload");
+</script>

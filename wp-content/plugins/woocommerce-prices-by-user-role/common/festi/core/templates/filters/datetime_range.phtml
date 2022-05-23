@@ -1,0 +1,36 @@
+<?php
+$key = $field->getFilterKey();
+$storeIdent = $field->getStore()->getIdent();
+?>
+<table class="b-dgs-filter-datetime-range">
+    <tr>
+        <td class="e-dgs-filter-datetime-range-label"><?php echo __('FROM'); ?>:</td>
+        <td nowrap="nowrap" class="e-dgs-filter-datetime-range-item">
+            <div class="input-group">
+                <input type="date"
+                       name="<?php echo $storeIdent; ?>[filter][<?php echo $key; ?>][0]"
+                       id="<?php echo $storeIdent; ?>[filter][<?php echo $key; ?>][0]"
+                       value="<?php echo !empty($field->filterValue[0]) ? htmlspecialchars($field->filterValue[0]) : ""; ?>"
+                       class="<?php echo $field->getFilterCssClassName(); ?>" 
+                       autocomplete="off" 
+                       placeholder="<?php echo __('From'); ?>"
+                       form="dgs-<?php echo $storeIdent ?>-filters" >
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="e-dgs-filter-datetime-range-label"><?php echo __('TO')?>:</td>
+        <td class="e-dgs-filter-datetime-range-item">
+            <div class="input-group">
+                <input type="date"
+                       name="<?php echo $storeIdent; ?>[filter][<?php echo $key; ?>][1]"
+                       id="<?php echo $storeIdent; ?>[filter][<?php echo $key; ?>][1]"
+                       value="<?php echo !empty($field->filterValue[1]) ? htmlspecialchars($field->filterValue[1]) : ""; ?>"
+                       class="<?php echo $field->getFilterCssClassName(); ?>" 
+                       autocomplete="off"
+                       placeholder="<?php echo __('To'); ?>"
+                       form="dgs-<?php echo $storeIdent ?>-filters" >
+            </div>
+        </td>
+    </tr>
+</table>

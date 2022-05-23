@@ -1,0 +1,40 @@
+<?php
+$attributes = $this->getElementAttributes();
+
+if ($this->hasAutocomplete()) {
+    $attributes .= ' autocomplete="off"';
+}
+
+$disclaimer = $this->get('disclaimer');
+?>
+<div class="input-group">
+    <input type="<?php echo $this->getInputType(); ?>" id="<?php echo $this->getName() ?>" name="<?php echo $this->getName() ?>" value="<?php echo $value; ?>" class="form-control <?php echo $this->getCssClassName(); ?> "<?php echo $attributes; ?> />
+<?php
+if ($disclaimer) {
+?>
+    <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign glyphicon-<?php echo $this->getSelectorPostfix() ?>" data-toggle="tooltip" data-placement="right" title="<?php echo $disclaimer; ?>" ></span></span>
+<?php
+}
+?>
+</div>
+
+<?php
+if ($disclaimer) {
+?>
+    <script>
+        jQuery(".glyphicon-<?php echo $this->getSelectorPostfix() ?>").tooltip({
+            'container':'body',
+            'placement':'<?php echo $this->get('tooltipPlacement') ? $this->get('tooltipPlacement') : 'right' ?>'
+        });
+    </script>
+<?php
+}
+?>
+
+<?php
+if ($this->hasAutocomplete()) {
+    echo $this->fetch('autocomplete.phtml');
+}
+?>
+
+

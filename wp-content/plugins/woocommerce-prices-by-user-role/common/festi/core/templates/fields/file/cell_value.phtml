@@ -1,0 +1,5 @@
+<?php if (!empty($links['thumb'])) : ?> 
+	<img class="img-rounded" src="<?php echo $links['thumb']; ?>" />
+<?php elseif (!empty($links['file'])) :?>
+	<a href="<?php echo $links['file']; ?>" target="_blank"><?php echo $fileName; ?></a>
+<?php endif; ?>

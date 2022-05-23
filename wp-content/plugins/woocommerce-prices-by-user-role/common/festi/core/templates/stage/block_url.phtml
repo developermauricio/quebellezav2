@@ -1,0 +1,7 @@
+<div id="<?php echo $containerName;?>"></div>
+<script>
+Jimbo.showLoadingBar('#<?php echo $containerName;?>');
+jQuery('#<?php echo $containerName;?>').load('<?php echo $url;?>', function(response, status, xhr) {
+    Jimbo.hideLoadingBar('#<?php echo $containerName;?>');
+});
+</script>

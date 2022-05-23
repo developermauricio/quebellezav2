@@ -1,0 +1,906 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: festi-woocommerce-cart\n"
+"POT-Creation-Date: 2017-10-27 09:20+0200\n"
+"PO-Revision-Date: 2017-10-27 09:44+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: SettingsWooUserRolePrices.php:19
+msgid "User Roles for Special Pricing"
+msgstr "Precios por rol para precios especiales"
+
+#: SettingsWooUserRolePrices.php:29
+msgid ""
+"Select user roles which should be active on product page for special prices"
+msgstr "Selecciona los roles para activar productos con precio especial"
+
+#: SettingsWooUserRolePrices.php:36
+#, fuzzy
+#| msgid "Discount or Markup for all products"
+msgid "Discount or Markup for Products"
+msgstr "Descuento o margen para todos los productos"
+
+#: SettingsWooUserRolePrices.php:41
+msgid "discount"
+msgstr "descuento"
+
+#: SettingsWooUserRolePrices.php:42
+msgid "markup"
+msgstr "margen"
+
+#: SettingsWooUserRolePrices.php:49
+msgid ""
+"Provide discount or markups in fixed or percentage terms \n"
+"                    for all products on shop"
+msgstr ""
+"Provide discount or markups in fixed or percentage terms \n"
+"                    for all products on shop"
+
+#: SettingsWooUserRolePrices.php:67
+msgid "Display Price Savings on"
+msgstr "Mostrar ahorro de precio en"
+
+#: SettingsWooUserRolePrices.php:71
+msgid ""
+"Display to customer regular price, the user role price with label &quot;Your "
+"Price&quot;, and the percent saved with label &quot;Savings&quot;"
+msgstr ""
+
+#: SettingsWooUserRolePrices.php:78
+msgid "Product Page"
+msgstr "Página de producto"
+
+#: SettingsWooUserRolePrices.php:80
+msgid "Products Archive Page (for Simple product)"
+msgstr "Archivo de productos (sólo productos simples)"
+
+#: SettingsWooUserRolePrices.php:84
+msgid "Cart Page (for Order Total)"
+msgstr "Página de la cesta (para el total del pedido)"
+
+#: SettingsWooUserRolePrices.php:95
+msgid "Color for Savings Labels"
+msgstr "Color de etiquetas de ahorro"
+
+#: SettingsWooUserRolePrices.php:104
+msgid ""
+"Select color for text labels about customer savings Regular Price, Your "
+"Price, Savings"
+msgstr "Selecciona el color de las etiquetas Precio, Precio final, Ahorro"
+
+#: SettingsWooUserRolePrices.php:112
+msgid "<h2>Rules for Non-Registered Users</h2>  "
+msgstr "<h2>Reglas para usuarios No Registrados</h2> "
+
+#: SettingsWooUserRolePrices.php:122 SettingsWooUserRolePrices.php:199
+msgid "Hide the &quot;Add to Cart&quot; Button"
+msgstr "Ocultar botón \"Añadir a la cesta\" "
+
+#: SettingsWooUserRolePrices.php:130
+msgid "Enable hidden the &quot;Add to Cart&quot; button"
+msgstr "Activar ocultar botón \"Añadir a la cesta\" "
+
+#: SettingsWooUserRolePrices.php:136
+msgid "Text Instead of &quot;Add to Cart&quot; button"
+msgstr "Texto en lugar de \"Añadir a la cesta\" "
+
+#: SettingsWooUserRolePrices.php:146
+msgid ""
+"Provide written text which will be displayed on instead of &quot;Add to "
+"Cart&quot; \n"
+"                    button"
+msgstr ""
+
+#: SettingsWooUserRolePrices.php:154 SettingsWooUserRolePrices.php:215
+msgid "Hide the Prices"
+msgstr "Ocultar los precios"
+
+#: SettingsWooUserRolePrices.php:163
+msgid "Enable hidden prices for all products"
+msgstr "Activar Ocultar precios para Todos los productos"
+
+#: SettingsWooUserRolePrices.php:169
+msgid "Text Instead of Price"
+msgstr "Texto en lugar de Precio"
+
+#: SettingsWooUserRolePrices.php:174
+msgid "Please login or register to see price"
+msgstr "Por favor, accede a tu cuenta para ver el precio"
+
+#: SettingsWooUserRolePrices.php:181
+msgid "Provide written text which will be displayed on instead of the price"
+msgstr ""
+
+#: SettingsWooUserRolePrices.php:188
+#| msgid "Text for Non-Registered Users"
+msgid "<h2>Rules for Registered Users</h2>  "
+msgstr "<h2>Reglas para Usuarios registrados</h2>\v\v"
+
+#: SettingsWooUserRolePrices.php:208
+msgid ""
+"Enable hidden the &quot;Add to Cart&quot;\n"
+"                     button from certain user roles"
+msgstr ""
+
+#: SettingsWooUserRolePrices.php:226
+msgid "Enable hidden prices from certain user roles"
+msgstr "Ocultar precios para ciertos los roles"
+
+#: SettingsWooUserRolePrices.php:232
+msgid "Text with Hidden Price"
+msgstr "Texto para precios ocultos"
+
+#: SettingsWooUserRolePrices.php:237
+msgid "Price for your role is hidden"
+msgstr "Precio para el rol oculto"
+
+#: SettingsWooUserRolePrices.php:244
+msgid ""
+"Provide written text with certain roles which will be shown instead of the "
+"product price"
+msgstr ""
+
+#: SettingsWooUserRolePrices.php:251
+#, fuzzy
+#| msgid "Hide Roles Price"
+msgid "Hide Empty Price"
+msgstr "Ocultar precios por rol"
+
+#: SettingsWooUserRolePrices.php:263
+msgid "Enable hidden empty price from certain user roles"
+msgstr ""
+
+#: SettingsWooUserRolePrices.php:269
+msgid "Text Instead of Empty Price"
+msgstr ""
+
+#: SettingsWooUserRolePrices.php:278
+msgid "Provide written text which will be displayed on instead of empty price"
+msgstr ""
+
+#: StringManagerWooUserRolePrices.php:56
+msgid "Total retail"
+msgstr ""
+
+#: StringManagerWooUserRolePrices.php:61 StringManagerWooUserRolePrices.php:76
+msgid "Your Price"
+msgstr "Tu precio"
+
+#: StringManagerWooUserRolePrices.php:66
+msgid "Total savings"
+msgstr "Total ahorrado"
+
+#: StringManagerWooUserRolePrices.php:71
+#: common/import/WooMappingImportOptions.php:375
+msgid "Regular Price"
+msgstr "Precio estándar"
+
+#: StringManagerWooUserRolePrices.php:81
+msgid "Savings"
+msgstr "Ahorrado"
+
+#: StringManagerWooUserRolePrices.php:86
+msgid "Sign-up Fee"
+msgstr ""
+
+#: StringManagerWooUserRolePrices.php:91
+msgid "/ month"
+msgstr "/ mes"
+
+#: StringManagerWooUserRolePrices.php:96
+msgid "Free!"
+msgstr "Gratuïto!"
+
+#: WooUserRolePricesBackendFestiPlugin.php:629
+#: WooUserRolePricesBackendFestiPlugin.php:630
+#: common/import/WooMappingImportOptions.php:30
+msgid "Prices by User Role"
+msgstr "Precios por Rol"
+
+#: WooUserRolePricesBackendFestiPlugin.php:723
+msgid "Success refresh plugin"
+msgstr "Refresco realizado"
+
+#: WooUserRolePricesBackendFestiPlugin.php:846
+msgid "Prices by User Role Options"
+msgstr "Opciones de precio por rol"
+
+#: WooUserRolePricesBackendFestiPlugin.php:862
+msgid "Unable to remove a role. Key does not exist."
+msgstr "No se podido eliminar rol. No existe la clave."
+
+#: WooUserRolePricesBackendFestiPlugin.php:895
+msgid "You have not entered the name of the role"
+msgstr "Debes introducir el nombre del rol"
+
+#: WooUserRolePricesBackendFestiPlugin.php:904
+msgid ""
+"An error has occurred, the Role Name contains unacceptable characters. "
+"Please use the Role Identifier field to add the user role."
+msgstr ""
+
+#: WooUserRolePricesBackendFestiPlugin.php:962
+msgid "Unsuccessful attempt to create a role"
+msgstr "No se ha podido crear el rol"
+
+#: WooUserRolePricesBackendFestiPlugin.php:1153
+msgid "Caching does not work! "
+msgstr "La cache no funciona "
+
+#: WooUserRolePricesBackendFestiPlugin.php:1158
+msgid "You don't have permission to access: "
+msgstr "No tienes permisos para acceder: "
+
+#: WooUserRolePricesBackendFestiPlugin.php:1259
+msgid ""
+"HI! Would you like unlock premium support? Please activate your copy of "
+"Prices by User Role."
+msgstr ""
+
+#: common/festi/envato/EnvatoUtil.php:62
+msgid ""
+"HI! Would you like unlock premium support? Please activate your copy of "
+"Festi-Team plugins."
+msgstr ""
+
+#: common/festi/exceptions/envato/ConnectionLibraryNotFound.php:15
+msgid ""
+"Following PHP directive is disabled: allow_url_fopen OR curl. In order to "
+"activate the license, please enable this directive."
+msgstr ""
+
+#: common/festi/exceptions/envato/EnvatoApiServerNotFound.php:15
+msgid ""
+"The server is not responding. Please contact Festi Support to activate your "
+"license. "
+msgstr ""
+"El servidor no responde. Contactar con el soporte de Festi para activar la "
+"licencia. "
+
+#: common/festi/woocommerce/WooCommerceFacade.php:42
+msgid "Class not found path: "
+msgstr ""
+
+#: common/import/ImportUploadFields.php:34
+msgid "File to Import"
+msgstr "Fichero a importar"
+
+#: common/import/ImportUploadFields.php:41
+msgid "URL to Import"
+msgstr "URL de importación"
+
+#: common/import/ImportUploadFields.php:47
+msgid ""
+"Enter the full URL to a CSV file. Leave this field  blank if uploading a "
+"file."
+msgstr ""
+"Escribe la URL al fichero CSV. Deja en blanco este campo si haces upload."
+
+#: common/import/ImportUploadFields.php:55
+msgid "First Row is Header"
+msgstr "Primera línea es la cabecera"
+
+#: common/import/ImportUploadFields.php:63
+msgid "Path to Uploads Folder"
+msgstr "Ruta al directorio de Uploads"
+
+#: common/import/ImportUploadFields.php:74
+msgid "CSV Field Separator"
+msgstr "Separador de campo CSV"
+
+#: common/import/ImportUploadFields.php:80
+msgid "Enter the character used to separate each field in your CSV"
+msgstr "Introduce el carácter usado para separar cada campo en tu CSV"
+
+#: common/import/ImportUploadFields.php:87
+msgid "Category Hierarchy Separator"
+msgstr "Separador de jerarquía de categorías"
+
+#: common/import/ImportUploadFields.php:93
+msgid ""
+"Enter the character used to separate categories in a hierarchical structure"
+msgstr ""
+"Introduce el carácter para separar categorías en la estructura jerárquica"
+
+#: common/import/ImportUploadFields.php:100
+msgid "Decimal Separator"
+msgstr "Separador decimal"
+
+#: common/import/ImportUploadFields.php:106
+msgid "Enter the decimal separator of prices."
+msgstr "Escribir el separador de decimales."
+
+#: common/import/WooMappingImportOptions.php:22
+msgid "General"
+msgstr ""
+
+#: common/import/WooMappingImportOptions.php:26
+msgid "Status and Visibility"
+msgstr "Estado y visibilidad"
+
+#: common/import/WooMappingImportOptions.php:35
+msgid "Pricing, Tax, and Shipping"
+msgstr "Precio, impuesto y envío"
+
+#: common/import/WooMappingImportOptions.php:42
+msgid "Special Product Types"
+msgstr "Tipos de productos especiales"
+
+#: common/import/WooMappingImportOptions.php:49
+msgid "Categories and Tags"
+msgstr "Categorías y etiquetas"
+
+#: common/import/WooMappingImportOptions.php:56
+msgid "Custom Attributes and Post Meta"
+msgstr "Atributos y Post meta personalizados"
+
+#: common/import/WooMappingImportOptions.php:63
+msgid "Product Images"
+msgstr "Imágenes de producto"
+
+#: common/import/WooMappingImportOptions.php:87
+msgid "Do Not Import"
+msgstr "No Importar"
+
+#: common/import/WooMappingImportOptions.php:99
+#: templates/backend/import/maping_settings.phtml:6
+msgid "Name"
+msgstr "Nombre"
+
+#: common/import/WooMappingImportOptions.php:106
+#: templates/backend/import/result_table.phtml:14
+msgid "SKU"
+msgstr ""
+
+#: common/import/WooMappingImportOptions.php:111
+msgid "Parent SKU"
+msgstr "SKU superior"
+
+#: common/import/WooMappingImportOptions.php:116
+msgid "Description"
+msgstr "Descripción"
+
+#: common/import/WooMappingImportOptions.php:123
+msgid "Short Description"
+msgstr "Descripción corta"
+
+#: common/import/WooMappingImportOptions.php:138
+msgid "Status (Valid: publish/draft/trash/[more in Codex])"
+msgstr "Estado (Valores: publish/draft/trash/[more in Codex])"
+
+#: common/import/WooMappingImportOptions.php:149
+msgid "Menu Order"
+msgstr "Order en listado"
+
+#: common/import/WooMappingImportOptions.php:158
+msgid "Visibility (Valid: visible/catalog/search/hidden)"
+msgstr "Visible (Valores: visible/catalog/search/hidden)"
+
+#: common/import/WooMappingImportOptions.php:169
+msgid "Featured (Valid: yes/no)"
+msgstr "Destacado (Valores: yes/no)"
+
+#: common/import/WooMappingImportOptions.php:179
+msgid "Stock"
+msgstr ""
+
+#: common/import/WooMappingImportOptions.php:189
+msgid "Stock Status (Valid: instock/outofstock)"
+msgstr "Estado stock  (Valores: instock/outofstock)"
+
+#: common/import/WooMappingImportOptions.php:200
+msgid "Backorders (Valid: yes/no/notify)"
+msgstr ""
+
+#: common/import/WooMappingImportOptions.php:210
+msgid "Manage Stock (Valid: yes/no)"
+msgstr "Gestionar stock (Valores: yes/no)"
+
+#: common/import/WooMappingImportOptions.php:220
+msgid "Comment/Review Status (Valid: open/closed)"
+msgstr "Estado Comentario/Revisión (Valores: open/closed)"
+
+#: common/import/WooMappingImportOptions.php:230
+msgid "Pingback/Trackback Status (Valid: open/closed)"
+msgstr "Estado Pingback/Trackback  (Valores: open/closed)"
+
+#: common/import/WooMappingImportOptions.php:336
+msgid " Price"
+msgstr "Precio"
+
+#: common/import/WooMappingImportOptions.php:386
+msgid "Sale Price"
+msgstr "Precio venta"
+
+#: common/import/WooMappingImportOptions.php:393
+msgid "Tax Status (Valid: taxable/shipping/none)"
+msgstr "Tipo de impuestos (Valores: taxable/shipping/none)"
+
+#: common/import/WooMappingImportOptions.php:404
+msgid "Tax Class"
+msgstr "Clase de impuesto"
+
+#: common/import/WooMappingImportOptions.php:411
+msgid "Shipping Class By ID (Separated by \"|\")"
+msgstr "Tipo de envío por ID (Separado por \"|\")"
+
+#: common/import/WooMappingImportOptions.php:418
+msgid "Shipping Class By Name (Separated by \"|\")"
+msgstr "Tipo de envío por Nombre  (Separado por \"|\")"
+
+#: common/import/WooMappingImportOptions.php:430
+msgid "Weight"
+msgstr "Peso"
+
+#: common/import/WooMappingImportOptions.php:439
+msgid "Length"
+msgstr "Largo"
+
+#: common/import/WooMappingImportOptions.php:448
+msgid "Width"
+msgstr "Ancho"
+
+#: common/import/WooMappingImportOptions.php:457
+msgid "Height"
+msgstr "Alto"
+
+#: common/import/WooMappingImportOptions.php:474
+msgid "Downloadable (Valid: yes/no)"
+msgstr "Descargable (Valores: yes/no)"
+
+#: common/import/WooMappingImportOptions.php:484
+msgid "Virtual (Valid: yes/no)"
+msgstr "Virtual (Valores yes/no)"
+
+#: common/import/WooMappingImportOptions.php:494
+msgid "Product Type (Valid: simple/variable/grouped/external)"
+msgstr "Tipo producto (Valores: simple/variable/grouped/external)"
+
+#: common/import/WooMappingImportOptions.php:504
+msgid "Button Text (External Product Only)"
+msgstr "Texto botón ( sólo productos externos )"
+
+#: common/import/WooMappingImportOptions.php:513
+msgid "Product URL (External Product Only)"
+msgstr "URL producto ( sólo productos externos )"
+
+#: common/import/WooMappingImportOptions.php:522
+msgid "File Path (Downloadable Product Only)"
+msgstr "Ruta a fichero"
+
+#: common/import/WooMappingImportOptions.php:533
+msgid "Download Expiration (in Days)"
+msgstr "Descargable ( Límite en días )"
+
+#: common/import/WooMappingImportOptions.php:543
+msgid "Download Limit (Number of Downloads)"
+msgstr "Descargable ( Límite en descargas )"
+
+#: common/import/WooMappingImportOptions.php:561
+msgid "Categories By Name (Separated by \"|\")"
+msgstr "Categorías por Nombre (Separadas por \"|\")"
+
+#: common/import/WooMappingImportOptions.php:574
+msgid "Categories By ID (Separated by \"|\")"
+msgstr "Categorías por ID ( (Separadas por \"|\")"
+
+#: common/import/WooMappingImportOptions.php:581
+msgid "Tags By Name (Separated by \"|\")"
+msgstr "Etiquetas por Nombre  (Separadas por \"|\")"
+
+#: common/import/WooMappingImportOptions.php:594
+msgid "Tags By ID (Separated by \"|\")"
+msgstr "Etiquetas por ID (Separadas por \"|\")"
+
+#: common/import/WooMappingImportOptions.php:609
+msgid "Custom Field / Product Attribute (Set Name Below)"
+msgstr "Campo personalizado / Atributo producto (Asignar nombre debajo)"
+
+#: common/import/WooMappingImportOptions.php:619
+msgid "Post Meta"
+msgstr ""
+
+#: common/import/WooMappingImportOptions.php:636
+msgid "Images (By URL, Separated by \"|\")"
+msgstr "Imágenes por URL (Separadas por \"|\")"
+
+#: common/import/WooMappingImportOptions.php:651
+msgid "Images (By Local File Path, Separated by \"|\")"
+msgstr "Imágenes por ruta local  (Separadas por \"|\")"
+
+#: common/import/WooProductsSkuManager.php:181
+msgid "Skipped import of product without a name"
+msgstr "Se han ignorado productos sin nombre"
+
+#: common/import/WooProductsSkuManager.php:355
+#, php-format
+msgid "Skipping import of duplicate image %s."
+msgstr "Se han ignorado imágenes duplicadas %s."
+
+#: common/import/WooProductsSkuManager.php:373
+#, php-format
+msgid "Couldn't find local file %s."
+msgstr "No se encuentra fichero local %s."
+
+#: common/import/WooProductsSkuManager.php:594
+#, php-format
+msgid "Couldn't download file %s."
+msgstr "No se puede descargar %s."
+
+#: common/import/WooProductsSkuManager.php:616
+#, php-format
+msgid "Error Encountered while attempting to download %s"
+msgstr "Se ha producido un error mientras intentaba descargar %s"
+
+#: common/import/WooProductsSkuManager.php:656
+#, php-format
+msgid "HTTP status %s encountered while attempting to download %s"
+msgstr "Estado HTTP %s como respuesta al intentar descargar %s"
+
+#: common/import/WooProductsSkuManager.php:676
+#, php-format
+msgid ""
+"A valid file extension wasn't found in %s. Extension found was %s. Allowed "
+"extensions are: %s."
+msgstr ""
+"No hay una extensión valida en %s. Extensión encontrada es %s. Permitidas "
+"son: %s."
+
+#: common/import/WooProductsSkuManager.php:833
+#, php-format
+msgid "Couldn't insert product with name %s."
+msgstr "No se pudo actualizar producto  %s."
+
+#: common/import/WooProductsSkuManager.php:846
+#, php-format
+msgid "Couldn't update product with ID %s."
+msgstr "No se pudo actualizar producto con ID %s."
+
+#: common/import/WooProductsSkuManager.php:881
+#, php-format
+msgid "Insert product with ID %s."
+msgstr "Insertando producto con ID %s."
+
+#: common/import/WooProductsSkuManager.php:896
+#, php-format
+msgid "Updating product with ID %s."
+msgstr "Actualizando producto con ID %s."
+
+#: tests/framework/factories/class-wc-unit-test-factory-for-webhook-delivery.php:22
+msgid "WooCommerce"
+msgstr ""
+
+#: templates/backend/add_new_role_form.phtml:17
+#: templates/backend/add_new_role_form.phtml:60
+#: templates/backend/settings_fields.phtml:52
+msgid "Add New Role"
+msgstr "Agregar nuevo rol"
+
+#: templates/backend/add_new_role_form.phtml:27
+msgid "Active"
+msgstr "Activo"
+
+#: templates/backend/add_new_role_form.phtml:31
+msgid "Role Name"
+msgstr "Nombre rol"
+
+#: templates/backend/add_new_role_form.phtml:39
+msgid "Role Identifier"
+msgstr "Identificar rol"
+
+#: templates/backend/add_new_role_form.phtml:44
+msgid ""
+"Add user role with this field, if your language contains non latin "
+"characters [A-Z], ex: managers, reseller"
+msgstr ""
+"Agregar Rol de usuario en este campo si no contiene car cteres no latinos [A-"
+"Z], ej: managers, reseller"
+
+#: templates/backend/bulk_edit_hide_product.phtml:6
+msgid "Hide Product Per Role"
+msgstr "Ocultar precios para los roles"
+
+#: templates/backend/footer.phtml:2
+msgid ""
+"Created by <a href=\"http://festi.team\" target=\"_blank\">Festi Team</a>.  "
+"Premium Support and Custom Development Services."
+msgstr ""
+
+#: templates/backend/form/multicheck.phtml:59
+msgid "&times;"
+msgstr ""
+
+#: templates/backend/form/multidiscount.phtml:59
+msgid "%"
+msgstr ""
+
+#: templates/backend/form/multidiscount.phtml:83
+msgid "regular"
+msgstr "base"
+
+#: templates/backend/form/multidiscount.phtml:84
+msgid "role"
+msgstr "rol"
+
+#: templates/backend/import/import_preview_page.phtml:13
+#: templates/backend/import/import_preview_page.phtml:103
+msgid "Confirm & Run Import"
+msgstr "Confirmar y iniciar Importar"
+
+#: templates/backend/import/import_preview_page.phtml:20
+#: templates/backend/import/import_preview_page.phtml:110
+#: templates/backend/sale_price_by_role.phtml:33
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/backend/import/import_result_page.phtml:7
+msgid "The process of importing completed. "
+msgstr "Proceso de importación completado. "
+
+#: templates/backend/import/import_result_page.phtml:11
+msgid "Please Wait! The process of importing. "
+msgstr "Por favor, espera!!!  Proceso de importación activo. "
+
+#: templates/backend/import/import_result_page.phtml:29
+msgid "Show Responses Log"
+msgstr "Mostrar respuesta de Log"
+
+#: templates/backend/import/import_upload_page.phtml:40
+msgid "Upload and Preview"
+msgstr "Upload y revisión"
+
+#: templates/backend/import/maping_settings.phtml:2
+msgid "Custom Field Settings"
+msgstr "Opciones de campos personalizados"
+
+#: templates/backend/import/maping_settings.phtml:62
+msgid "Image Settings"
+msgstr "Opciones de imagen"
+
+#: templates/backend/import/maping_settings.phtml:73
+msgid "Set First Image as Featured"
+msgstr "Asignar primera imagen como Destacada"
+
+#: templates/backend/import/maping_settings.phtml:84
+msgid "Skip Duplicate Images"
+msgstr "Ignorar imágenes repetidas"
+
+#: templates/backend/import/maping_settings.phtml:94
+msgid "Post Meta Settings"
+msgstr "Opciones Post Meta"
+
+#: templates/backend/import/maping_settings.phtml:101
+msgid "Meta Key"
+msgstr ""
+
+#: templates/backend/import/progress_data.phtml:4
+msgid "Processed"
+msgstr "Procesado"
+
+#: templates/backend/import/progress_data.phtml:11
+msgid "Remainin"
+msgstr "Remanente"
+
+#: templates/backend/import/progress_data.phtml:15
+msgid "Errors"
+msgstr "Errores"
+
+#: templates/backend/import/progress_data.phtml:19
+msgid "Total"
+msgstr ""
+
+#: templates/backend/import/result_table.phtml:5
+msgid "#Row"
+msgstr "#Linea"
+
+#: templates/backend/import/result_table.phtml:8
+msgid "Post ID"
+msgstr ""
+
+#: templates/backend/import/result_table.phtml:11
+msgid "Product Name"
+msgstr "Nombre producto"
+
+#: templates/backend/import/result_table.phtml:17
+msgid "Result"
+msgstr "Resultado"
+
+#: templates/backend/import/result_table.phtml:20
+msgid "Message"
+msgstr "Mensaje"
+
+#: templates/backend/manual_url.phtml:8
+msgid "Link to manual"
+msgstr "Enlace a la documentación"
+
+#: templates/backend/product_tab.phtml:3
+msgid "Hide Roles Price"
+msgstr "Ocultar precios por rol"
+
+#: templates/backend/product_tab_content.phtml:4
+msgid "Hiding Rules"
+msgstr "Reglas de ocultación"
+
+#: templates/backend/product_tab_content.phtml:15
+msgid "Show Prices only for Registered Users"
+msgstr "Mostrar precios solo a usuarios registrados"
+
+#: templates/backend/product_tab_content.phtml:20
+msgid ""
+"To activate option per-product - please disable &quot;Show Prices for all "
+"products only for Registered Users&quot; in Hiding Rules"
+msgstr ""
+
+#: templates/backend/product_tab_content.phtml:39
+msgid "Hide Prices for User Roles:"
+msgstr "Ocultar precios por rol: "
+
+#: templates/backend/product_tab_content.phtml:52
+#, fuzzy
+#| msgid ""
+#| "To Enable this role you need disable general setting for all products"
+msgid "To Enable this role you need disable hiding rule for all products"
+msgstr ""
+"Para activar este rol necesitas desactivar Opciones generales para todos los "
+"productos"
+
+#: templates/backend/product_tab_content_hide_product.phtml:7
+#, fuzzy
+#| msgid "Hide Prices for User Roles:"
+msgid "Hide Products per Role:"
+msgstr "Ocultar precios por rol: "
+
+#: templates/backend/refresh.phtml:10
+msgid "Refresh Plugin"
+msgstr "Refrescar"
+
+#: templates/backend/registration.phtml:3
+msgid "ACTIVATE PRICE BY USER ROLE"
+msgstr "ACTIVAR PRICE BY USER ROLE"
+
+#: templates/backend/registration.phtml:5
+msgid ""
+"Congratulations! You are about to activate great e-commerce plugin for "
+"WordPress. You will now receive all the benefits of Price by User Role, "
+"including regular updates and premium class support."
+msgstr ""
+
+#: templates/backend/registration.phtml:15
+#, php-format
+msgid "Your license will activate Price by User Role on %s"
+msgstr "Tu silencia Price by User Role será activada en %s"
+
+#: templates/backend/registration.phtml:31
+msgid ""
+"In order to receive all benefits of Prices by User Role \n"
+"            you need to activate your copy of plugin. By activating of "
+"Prices by \n"
+"            User Role license you will unlock premium options - direct "
+"plugin updates and \n"
+"            <strong>access to official support.</strong>"
+msgstr ""
+
+#: templates/backend/registration.phtml:39
+#| msgid "Prices by User Role"
+msgid "Activate Prices by User Role"
+msgstr "Activar Prices by User Role"
+
+#: templates/backend/registration.phtml:46
+msgid "Don't have valid license yet?"
+msgstr "¿No tienes una licencia válida?"
+
+#: templates/backend/registration.phtml:48
+#| msgid "Prices by User Role"
+msgid "Purchase Prices by User Role"
+msgstr "Comprar Prices by User Role"
+
+#: templates/backend/registration.phtml:65
+msgid "NO LICENSES FOUND"
+msgstr "NO SE HAN ENCONTRADO LICENCIAS"
+
+#: templates/backend/registration.phtml:68
+msgid ""
+"It seems that you do not have any valid license \n"
+"                            for Prices by User Role. <strong>Why do I need "
+"direct license?</strong> \n"
+"                            Direct product license unlocks several benefits:"
+msgstr ""
+"Parece que no tienes una licencia válida \n"
+"                            para Prices by User Role. <strong>¿Porqué usar "
+"una liencia?</strong> \n"
+"                            Una liencia ofrece muchos beneficios:"
+
+#: templates/backend/registration.phtml:78
+msgid "Access official customer support"
+msgstr "Acceso al soporte oficial"
+
+#: templates/backend/registration.phtml:83
+#| msgid "Prices by User Role"
+msgid "Update Prices by User Role directly"
+msgstr "Actualizar directamente Prices by User Role"
+
+#: templates/backend/registration.phtml:92
+msgid "Purchase license"
+msgstr "Licencia de compra"
+
+#: templates/backend/registration.phtml:112
+msgid "<p><a href=\"mailto::"
+msgstr ""
+
+#: templates/backend/rolle_filds.phtml:39
+msgid "delete"
+msgstr "borrar"
+
+#: templates/backend/sale_price_by_role.phtml:1
+#: templates/backend/variable_field.phtml:14
+msgid "Please enter in a value less than the "
+msgstr "Por favor, introduce un valor inferior a "
+
+#: templates/backend/sale_price_by_role.phtml:4
+#: templates/backend/variable_field.phtml:32
+msgid "Schedule"
+msgstr "Horario"
+
+#: templates/backend/sale_price_by_role.phtml:15
+#, fuzzy
+#| msgid "Sale Price"
+msgid " Sale Price Dates"
+msgstr "Precio venta"
+
+#: templates/backend/settings_fields.phtml:56
+msgid "<em>or select an existing</em>"
+msgstr "<em>o selecciona uno existente</em>"
+
+#: templates/backend/settings_page.phtml:35
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: templates/backend/variable_field.phtml:27
+#, fuzzy
+#| msgid "Sale Price"
+msgid " Sale Price: "
+msgstr "Precio venta"
+
+#: templates/backend/variable_field.phtml:35
+msgid "Cancel schedule"
+msgstr "Cancelar agenda"
+
+#: templates/backend/variable_field.phtml:48
+msgid "Sale start date:"
+msgstr "Fecha inicio venta"
+
+#: templates/backend/variable_field.phtml:59
+msgid "Sale end date:"
+msgstr "Fecha fin de venta"
+
+#: templates/backend/wpml_currency_fields.phtml:12
+msgid "Price by User Roles in Currencies"
+msgstr "Precios por rol según Moneda"
+
+#~ msgid "Price"
+#~ msgstr "Precio"
+
+#~ msgid "Show Prices for all products only for Registered Users"
+#~ msgstr "Mostrar los precios solo a usuarios registrados"
+
+#~ msgid "Color for Price Title on Product Page"
+#~ msgstr "Color del título del precio en la página de producto"
+
+#~ msgid "General Settings"
+#~ msgstr "Opciones generales"
+
+#~ msgid "Import"
+#~ msgstr "Importar"
+
+#~ msgid "WooCommerce not active or not installed."
+#~ msgstr "WooCommerce не активен или не установлен"

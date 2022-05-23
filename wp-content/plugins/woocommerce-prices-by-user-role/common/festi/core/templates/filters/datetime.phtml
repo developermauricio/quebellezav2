@@ -1,0 +1,14 @@
+<?php 
+    $key = $field->getFilterKey();
+    $storeIdent = $field->getStore()->getIdent();
+?>
+
+<div class="input-group ">
+  	<input type="date" 
+      	name="<?php echo $storeIdent; ?>[filter][<?php echo $key; ?>]"
+    	id="<?php echo $storeIdent; ?>[filter][<?php echo $key; ?>]"
+    	value="<?php echo htmlspecialchars($field->filterValue); ?>" 
+      	class="<?php echo $field->getFilterCssClassName(); ?>" 
+      	autocomplete="off"
+        form="dgs-<?php echo $storeIdent ?>-filters" />
+</div>

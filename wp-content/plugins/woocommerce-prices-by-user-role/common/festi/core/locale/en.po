@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-23 08:14+0300\n"
+"PO-Revision-Date: 2012-03-15 09:59+0200\n"
+"Last-Translator: Denis Panaskin <goliathdp@gmail.com>\n"
+"Language-Team: Russian <goliathdp@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "File \"%s\" for plugin \"%s\" was not found."
+msgstr "File \"%s\" for plugin \"%s\" was not found."
+
+msgid "Class \"%s\" was not found in file \"%s\"."
+msgstr "Class \"%s\" was not found in file \"%s\"."
+
+msgid "ERROR_DB_CONNECT"
+msgstr "Database error"
+
+msgid "BUTTON_EDIT"
+msgstr "Save"
+
+msgid "BUTTON_REMOVE"
+msgstr "Delete"
+
+msgid "BUTTON_INSERT"
+msgstr "Insert"
+
+msgid "BUTTON_BACK"
+msgstr "Back"
+
+msgid "BUTTON_FILTER"
+msgstr "Filter"
+
+msgid "ERR_UNIQKEY"
+msgstr "Non unique value for keys"
+
+msgid "ERR_INSERT"
+msgstr "Error in insert"
+
+msgid "ERR_DELETE"
+msgstr "Error in delete"
+
+msgid "ERR_REQUIRED"
+msgstr "You haven't feel all fields '%s'"
+
+msgid "ERR_UNKNOWN"
+msgstr "Error happend"
+
+msgid "ERR_TABLEDEF"
+msgstr "Error while loading table info %s"
+
+msgid "ERR_CONSTRAINT"
+msgstr "Impossible to remove the data involved"
+
+msgid "STATUS_SUCCESS"
+msgstr "Successfully saved"
+
+msgid "STATUS_SUCCESS_DELETE"
+msgstr "Successfully deleted"
+
+msgid "INFO_PAGES"
+msgstr "Pages"
+
+msgid "ROW_VIEW"
+msgstr "View row"
+
+msgid "FORM_CHECK_ALL"
+msgstr "Check / uncheck all"
+
+msgid "ITEMSOERPAGE"
+msgstr "Items per page"
+
+msgid "TOTAL_ITEMS"
+msgstr "Total"
+
+msgid "FROM"
+msgstr "From"
+
+msgid "TO"
+msgstr "To"
+
+msgid "FILTERS"
+msgstr "Filter"
+

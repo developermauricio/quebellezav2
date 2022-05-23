@@ -1,0 +1,54 @@
+<?php 
+if ($trimValue != "button" && mb_strlen($value) <= $trimValue) {
+    echo $value;
+} else {
+    if ($trimValue != 'button') {
+        $shortMessage = mb_substr($value, 0, $trimValue);
+    }
+
+    $name = 'trim-'.$this->getName().'-'.$primaryKeyValue;
+?>
+<?php 
+if ($trimMode == "popup" || $trimValue == "button") {
+?>
+<div class="modal fade" id="<?php echo $name; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $name; ?>">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="<?php echo __('Close'); ?>"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalLongMessage"><?php echo $this->get('caption'); ?></h4>
+      </div>
+      <div class="modal-body">
+        <?php echo $value; ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo __('Close'); ?></button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php 
+}
+?>
+
+<?php 
+if ($trimValue == "button" && $value) {
+?>
+	<button type="button" class="btn btn-default" data-toggle="modal" data-target="#<?php echo $name; ?>"><?php echo __('View'); ?></button>
+<?php 
+} else if ($value) {
+?>
+    <?php 
+    if (!empty($shortMessage)) {
+        echo $shortMessage."...";
+    }
+    
+        if ($trimMode == "popup") {
+    ?><a href="#" data-toggle="modal" data-target="#<?php echo $name; ?>">[+]</a>
+    <?php 
+        }
+    }
+    ?>
+<?php 
+}
+?>

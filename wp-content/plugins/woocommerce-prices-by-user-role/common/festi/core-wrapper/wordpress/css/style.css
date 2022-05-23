@@ -1,0 +1,48 @@
+#hld {
+    background:none;
+}
+
+.wrapper {
+    width: auto;
+    /*
+    margin-right:15px;
+    margin-left:5px;
+    padding-top:3px;
+    */
+}
+
+
+
+#wpbody:before,
+#wpbody:after {
+  content:"";
+  display:table;
+}
+#wpbody:after {
+  clear:both;
+}
+#wpbody {
+  zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.wrapper nav.navbar {
+    padding:0px;
+    margin:10px 0px;
+}
+
+.navbar-nav dd, .navbar-nav li {
+    margin-bottom: 0px;
+}
+
+
+.wrapper .breadcrumb {
+    margin:0px 0px 10px 0px;
+}
+
+body #divSmallBoxes {
+	top: 25px;
+}
+
+ .wp-admin .e-filter select {
+	    height: 26px;
+}

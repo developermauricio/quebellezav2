@@ -1,0 +1,19 @@
+<?php
+$storeIdent = $field->getStore()->getIdent();
+?>
+<select name="<?php echo $storeIdent; ?>[filter][<?php echo $field->getFilterKey(); ?>]"
+        class="db-filed-filter db-filed-filter-<?php echo $field->getType()?>"
+        form="dgs-<?php echo $storeIdent ?>-filters">
+    <option value=""><?php echo __l('...'); ?></option>
+    <?php
+    $filterValues = $field->getFilterValues();
+    if (!empty($filterValues)) {
+        foreach ($filterValues as $key => $value) {
+			$selected = ($field->filterValue == $key) ? 'selected="selected"' : '';
+        ?>
+        <option value="<?php echo htmlspecialchars($key); ?>" <?php echo $selected; ?>><?php echo htmlspecialchars($value); ?></option>
+        <?php
+		}
+	}
+    ?>
+</select>

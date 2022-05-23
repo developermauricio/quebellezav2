@@ -1,0 +1,20 @@
+<div id="wpbody-content">
+     <div class="show-upload-view addons-banner-block">
+         <p id="module-extension"><?php _e('Add new module extension', $this->languageDomain);?></p>
+            <div class="upload-plugin">
+                <p class="install-help">
+                    <?php _e(
+                            'If you have an extension in a .zip format, you may install it by uploading it here.',
+                            $this->languageDomain
+                    );?>
+                </p>
+                <form method="post" enctype="multipart/form-data" class="wp-upload-form" action="update.php?action=upload-plugin">
+                    <?php wp_nonce_field('plugin-upload'); ?>
+                    <label class="screen-reader-text" for="pluginzip"><?php _e('Plugin zip file', $this->languageDomain);?></label>
+                    <input type="file" id="pluginzip" name="pluginzip" />
+                    <input type="submit" name="install-plugin-submit" id="install-plugin-submit" class="button" value="Install Now"/>
+                </form>
+            </div>
+           <span class="spinner"></span>
+     </div>
+</div>

@@ -1,0 +1,25 @@
+<?php 
+$inputType = $field->getInputType();
+$storeIdent = $field->getStore()->getIdent();
+?>
+
+<div class="b-db-filter-range">
+    <div class="e-db-filter-range-from">
+        <input type="<?php echo $inputType; ?>"
+               name="<?php echo $storeIdent; ?>[filter][<?php echo $field->getFilterKey(); ?>][0]"
+               value="<?php echo !empty($field->filterValue[0]) ? htmlspecialchars($field->filterValue[0]) : ""; ?>"
+               class="<?php echo $field->getFilterCssClassName(); ?>"
+               placeholder="<?php echo __('From'); ?>"
+               autocomplete="off"
+               form="dgs-<?php echo $storeIdent ?>-filters" />
+    </div>
+    <div class="e-db-filter-range-to">
+        <input type="<?php echo $inputType; ?>"
+               name="<?php echo $storeIdent; ?>[filter][<?php echo $field->getFilterKey(); ?>][1]"
+               value="<?php echo !empty($field->filterValue[1]) ? htmlspecialchars($field->filterValue[1]) : ""; ?>"
+               class="<?php echo $field->getFilterCssClassName(); ?>"
+               placeholder="<?php echo __('To'); ?>"
+               autocomplete="off"
+               form="dgs-<?php echo $storeIdent ?>-filters" />
+    </div>
+</div>

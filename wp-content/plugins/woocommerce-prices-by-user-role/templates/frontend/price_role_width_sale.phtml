@@ -1,0 +1,10 @@
+<?php if (!empty($price)) { ?>
+<del>
+    <span class="amount"><?php echo $price; ?></span>
+</del>
+<ins>
+    <span class="amount"><?php echo $salePrice; ?></span>
+</ins>
+<?php } else { ?>
+    <span class="amount"><?php echo $salePrice; ?></span>
+<?php } ?>

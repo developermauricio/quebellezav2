@@ -1,0 +1,55 @@
+<?php
+$attributes = $this->getElementAttributes();
+
+$isHtmlFive = $this->get('html5');
+$isReadOnly = $this->get('readonly');
+
+$core = Core::getInstance();
+
+$type = $isHtmlFive ? 'date' : 'text';
+
+if ($isHtmlFive && $this->get('time')) {
+    $type = 'datetime-local';
+}
+
+?>
+<div class="input-group input-group-small input-group-<?php echo $this->getType(); ?>" id="datetime_<?php echo $this->getName();?>">
+	
+	<?php if ($isReadOnly) {?>
+	<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+	<?php }?>
+	
+	<input type="<?php echo $type; ?>" 
+		id="<?php echo $this->getName();?>"
+		name="<?php echo $this->getName();?>"
+		value="<?php echo $value;?>"
+		class="form-control <?php echo $this->getCssClassName(); ?>"<?php echo $attributes; ?>>
+	
+	<?php 
+	if (!$isHtmlFive && !$isReadOnly) {
+	?>
+    	<div class="input-group-btn">
+    		<button id="btn-<?php echo $this->getName();?>" class="btn btn-default" type="button">
+    			...
+    		</button>
+    	</div>
+	<?php 
+	}
+	?>
+</div>
+<?php 
+if (!$isHtmlFive && !$isReadOnly) {
+?>
+<script>
+(function ($) {
+    Calendar.setup({
+        ifFormat: '<?php echo $format;?>',
+        button    : "btn-<?php echo $this->getName();?>",
+        inputField : "<?php echo $this->getName();?>"
+    });
+    
+})(jQuery);
+</script>
+<?php 
+}
+?>

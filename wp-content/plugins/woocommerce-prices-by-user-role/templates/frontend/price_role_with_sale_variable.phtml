@@ -1,0 +1,16 @@
+<?php 
+if (empty($salePrice)) {
+    $salePrice = $regularPrice;
+    $regularPrice = false;
+}
+if ($regularPrice) { ?>
+<del>
+    <span class="amount"><?php echo $regularPrice; ?></span>
+</del>
+<?php } ?>
+
+<?php if ($salePrice) { ?>
+<ins>
+    <span class="amount"><?php echo $salePrice; ?></span>
+</ins>
+<?php } ?>

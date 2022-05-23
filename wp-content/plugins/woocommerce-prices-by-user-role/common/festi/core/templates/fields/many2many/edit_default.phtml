@@ -1,0 +1,69 @@
+<?php
+
+assert($this instanceof Many2manyField);
+
+$list = $this->getValues();
+
+$html = '<div class="'.$this->getCssClassName().'">';
+
+if ($this->extended) {
+    $html .= '<table width="95%">';
+    $index = 0;
+    foreach ($list as $id => $option) {
+        $firstLine = false;
+        $html .= '<tr class="e-row-'.($index % 2 == 0 ? 'odd' : 'even').'"><td rowspan="'.count($this->valuesList).'" class="e-caption"><b>'. $option['value'].": </b></td>";
+        $first = true;
+
+        foreach ($this->valuesList as $key => $caption) {
+            if (!$first) {
+                $html .= '<tr class="e-row-'.($index % 2 == 0 ? 'odd' : 'even').'">';
+                $first = false;
+            }
+            $checked = (isset($option['checked']) && (($option['checked'] & pow(2, $key)) == pow(2, $key))) ? 'checked' : '';
+            $html .= '<td class="e-options"><label class="checkbox-inline"><input type="checkbox" class="i-checkbox" name="m2m_'.$this->attributes['linkTable'].'['.$id.'][]" style="vertical-align: middle;" value="'.pow(2, $key).'" '.$checked.'> '.$caption.'</label></td></tr>';
+            $first = false;
+        }
+
+        $index++;
+    }
+    $html .= '</table>';
+} else {
+
+    if ($this->isMultiple()) {
+        $required = $this->isRequired() ? 'required':'';
+        $html .= '<select class="form-control" id="js-basic-multiple_'.$this->get('linkTable').'" name="'.$this->getKeyInRequest().'[]" multiple="multiple" style="min-width:100%" '.$required.'>';
+        foreach ($list as $id => $option) {
+            $checked = isset($option['checked']) ? 'selected' : '';
+            $html .= '<option value="'.$id.'" '.$checked.'>'.$option['value'].'</option>';
+
+        }
+        $html .= '</select>';
+    } else {
+        foreach ($list as $id => $option) {
+            $checked = isset($option['checked']) ? 'checked' : '';
+            $html .= '<div><label class="checkbox-inline"><input type="checkbox" class="i-checkbox" name="m2m_'.$this->get('linkTable').'['.$id.']" style="vertical-align: middle;" value="1" '.$checked.'> '.$option['value']."</label></div>";
+        }
+    }
+}
+/*
+$html .= '
+</div>
+<label><input type="checkbox" style="vertical-align: middle; margin-left:5px" onClick="tbl_check_all(\'m2m_'.$this->attributes['linkTable'].'\', this.checked)">
+<b>'.__('FORM_CHECK_ALL').'</b></label>';
+ */
+
+$html .= '</div>';
+echo $html;
+
+
+?>
+
+<?php if ($this->isMultiple()) { ?>
+    <script>
+        jQuery(document).ready(function() {
+            if (jQuery.fn.select2) {
+                jQuery('#js-basic-multiple_<?php echo $this->get('linkTable');?>').select2();
+            }
+        });
+    </script>
+<?php } ?>

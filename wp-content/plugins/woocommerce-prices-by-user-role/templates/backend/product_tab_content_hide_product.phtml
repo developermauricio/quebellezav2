@@ -1,0 +1,47 @@
+<div class="festi-user-role-hide-product">
+    <br />
+    <p class="festi-user-role-prices-option-name">
+        <strong>
+            <?php
+            _e(
+                'Hide Products per Role:',
+                $this->languageDomain
+            );
+            ?>
+        </strong>
+    </p>
+<fieldset>
+    <?php foreach ($roles as $roleKey => $role) { ?>
+
+    <label for="my-theme_my_select_option1">
+        <?php
+        $ident = PRICE_BY_ROLE_HIDDEN_PRODUCT_META_KEY;
+        $currentValue = false;
+        if (
+            $hideProductForUserRoles &&
+            array_key_exists($roleKey, $hideProductForUserRoles)
+            ) {
+            $currentValue = true;    
+        }
+
+        if ($this->hasHideAllProductsOptionInSettings() && !$isIgnoreHideOptionByProduct) {
+            $currentValue = true;
+        }
+
+        $vars = array (
+            'ident' => $ident.'['.$roleKey.']',
+            'item' => array(
+                'lable' => $role['name'],
+                'disabled' => false,
+                'disabledInfo' => '',
+                'value' => $currentValue,
+            ),
+            
+        );
+        echo $this->fetch('form/input_checkbox.phtml', $vars);
+        ?>
+    </label>
+    <br>
+    <?php } ?>
+</fieldset>      
+</div>

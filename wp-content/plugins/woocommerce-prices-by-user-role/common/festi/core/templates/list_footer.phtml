@@ -1,0 +1,16 @@
+<?php
+if (!empty($info['refreshTimeout'])) {
+    $timeout = $info['refreshTimeout'];
+    ?>
+    <script>
+        jQuery(document).ready(function () {
+            Jimbo.onRefreshDataTableByTimeout({
+                storeIdent: '<?php echo $store->getIdent();?>',
+                timeout   : '<?php echo $timeout; ?>',
+                url       : '<?php echo $info['url']; ?>'
+            });
+        });
+    </script>
+    <?php
+}
+?>

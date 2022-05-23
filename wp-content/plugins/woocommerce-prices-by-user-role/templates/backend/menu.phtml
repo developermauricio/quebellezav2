@@ -1,0 +1,37 @@
+<div class="festi-menu">
+    <ul class="festi-menu-nav festi-menu-nav-tabs">
+    <?php
+
+    $currentTab = $this->getDefaultMenuKey();
+
+    foreach ($this->menuOptions as $ident => $caption) {
+        $params = array(
+            'page' => $ident,
+            'refresh_completed' => '',
+            'refresh_plugin' => '',
+            'delete_role' => '',
+            'action' => ''
+        );
+        $url = $this->getUrl($params);
+        
+        $selectTab = '';
+        
+        if ($this->hasOptionPageInRequest()) {
+            if ($_GET['page'] == $ident) {
+                $selectTab = 'class="festi-menu-active"';
+            }
+             
+        } else if ($ident == $currentTab) {
+            $selectTab = 'class="festi-menu-active"';
+        }
+    ?>   
+        <li  <?php echo $selectTab;?>>
+            <a href="<?php echo $url; ?>" >
+                <?php echo __($caption, $this->languageDomain); ?>
+            </a>
+        </li>
+    <?php
+    }
+    ?>   
+    </ul>
+</div>

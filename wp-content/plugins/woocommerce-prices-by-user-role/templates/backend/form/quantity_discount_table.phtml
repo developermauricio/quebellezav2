@@ -1,0 +1,157 @@
+<table cellpadding="0" cellspacing="0" id="festi-user-quantity-discount">
+    <tbody>
+
+    <?php
+
+    if (!isset($currentValue)) {
+        $currentValue = array();
+    }
+
+    $userRolesNames = $this->getUserRoleNames();
+
+    $firstItem = reset($roles);
+
+    foreach ($roles as $roleName => $role) {
+
+        $isVisibleColumnKey = 'isVisible';
+
+        $isVisible = $this->tab->getCurrentRoleValueByColumn(
+            $roleName,
+            $isVisibleColumnKey,
+            $currentValue
+        );
+
+        $class = 'quantity-discount-row-hidden';
+
+        if ($isVisible) {
+            $class = 'quantity-discount-row-visible';
+        }
+
+        if ($role == $firstItem) {
+            ?>
+            <tr class="quantity-discount-header-row">
+                <th><?php _e('Role', $this->languageDomain)?></th>
+                <th><?php _e('Min Quantity', $this->languageDomain)?></th>
+                <th><?php _e('Max Quantity', $this->languageDomain)?></th>
+                <th><?php _e('Adjustment type', $this->languageDomain)?></th>
+                <th><?php _e('Value', $this->languageDomain)?></th>
+            </tr>
+            <?php
+        }
+        ?>
+
+        <tr class="<?php echo $class?>">
+            <td>
+                <?php
+
+                $columnKey = 'userRole';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue
+                );
+
+                $facade = $this->ecommerceFacade;
+
+                $taxClasses = $facade->getTaxClasses();
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'item' => array(
+                        'values' => $userRolesNames
+                    ),
+                    'currentValue' => $value
+                );
+
+                echo $this->fetch('form/input_select.phtml', $vars);
+
+                $columnKey = 'minValue';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue
+                );
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'currentValue' => $value,
+                    'item' => array('class' => 'quantity-discount-min-value')
+                );
+
+                echo $this->fetch('form/input_number.phtml', $vars);
+
+                $columnKey = 'maxValue';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue
+                );
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'currentValue' => $value,
+                    'item' => array('class' => 'quantity-discount-max-value')
+                );
+
+                echo $this->fetch('form/input_number.phtml', $vars);
+
+                $columnKey = 'type';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue
+                );
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'item' => array(
+                        'class' => 'quantity-discount-adjustment-type',
+                        'values' => array(
+                            0 => __('%', $this->languageDomain),
+                            1 => $this->ecommerceFacade->getCurrencySymbol()
+                        )
+                    ),
+                    'currentValue' => $value,
+                );
+
+                echo $this->fetch('form/input_select.phtml', $vars);
+
+                $columnKey = 'value';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue
+                );
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'currentValue' => $value,
+                    'item' => array('class' => 'quantity-discount-value')
+                );
+
+                echo $this->fetch('form/input_number.phtml', $vars);
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$isVisibleColumnKey}]",
+                    'currentValue' => $isVisible,
+                    'item' => array('class' => 'hidden')
+                );
+
+                echo $this->fetch('form/input_number.phtml', $vars);
+
+                ?>
+                <a href="" class="delete-row-quantity-discount">×</a>
+            </td>
+        </tr>
+        <?php
+    }
+    ?>
+    </tbody>
+</table>
+
+<input id="quantity-discount-add-row" value="Add row" class="button-primary">

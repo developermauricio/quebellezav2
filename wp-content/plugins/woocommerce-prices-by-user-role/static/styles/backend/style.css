@@ -1,0 +1,622 @@
+select#newfesti_docs_versions_parent,
+label[for='parent'],
+select#parent.postform
+{
+    display: none;
+}
+
+.festi-menu, .festi-user-role-prices-options {
+    margin-right:20px;
+}
+
+body table.wp-list-table.tags
+{
+    table-layout: auto;
+}
+
+.festi-user-role-prices  .festi-user-role-prices-section {
+    margin: 0;
+}
+
+.festi-user-role-prices-message#message {
+    margin-left:0;
+}
+
+.festi-border-top-hiding-rules-tab td,
+.festi-border-top-hiding-rules-tab th
+{
+    border-top: 1px solid #c3c3c3;
+}
+
+tbody tr.festi-padding td,
+tbody tr.festi-padding th
+{
+    padding-bottom: 40px;
+}
+
+.festi-h2 th h2
+{
+    font-size: 1.3em;
+    margin: 0 0 -25px 0;
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
+.festi-user-role-prices  .festi-user-role-prices-form-table
+{
+    width: 100%;
+    font-size: 14px;
+}
+
+.festi-user-role-prices-form-table tr.festi-user-role-prices-top-border td,
+.festi-user-role-prices-form-table tr.festi-user-role-prices-top-border th
+{
+    border-top: 1px solid #eee;
+}
+
+
+.festi-user-role-prices .festi-user-role-prices-help-tip
+{
+    cursor: help;
+    margin-right: -10px;
+    float: right;
+}
+
+.festi-hint-upper th img
+{
+    margin-top: -15px;
+}
+
+input[type="text"],
+.festi-user-role-prices input[type="number"],
+.festi-user-role-prices select
+{
+    height: 30px;
+}
+
+.festi-user-role-prices input[type="text"],
+.festi-user-role-prices input[type="number"],
+.festi-user-role-prices input[type="checkbox"],
+.festi-user-role-prices select
+{
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+input[type="text"]:focus,
+.festi-user-role-prices input[type="number"]:focus,
+.festi-user-role-prices input[type="checkbox"]:focus,
+.festi-user-role-prices select:focus
+{
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+.festi-user-role-prices .festi-user-role-prices-add-on
+{
+    display: inline-block;
+    width: 26px;
+    height: 24px !important;
+    min-width: 16px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+    position:relative;
+    right: 8px;
+    padding:2px;
+    top: 1px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ffffff;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    vertical-align: top;
+}
+.festi-user-role-prices tr.festi-user-role-prices-divider th
+{
+    text-align:left;
+    background-color: #789bb3;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+a.festi-user-role-prices-delete-role
+{
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 5px;
+    vertical-align: middle;
+    color: #ff5c5c;
+}
+
+a.festi-user-role-prices-delete-role:hover
+{
+    color: #ff0000;
+}
+
+.festi-user-role-prices  .festi-user-role-prices-hidden
+{
+    display:none;
+}
+
+fieldset.festi-user-role-prices-grouped-roles table th
+{
+    font-weight: normal;
+}
+
+.festi-user-role-prices-save-button-block
+{
+
+}
+
+.festi-user-role-prices .festi-user-role-prices-save-button
+{
+}
+
+fieldset.festi-user-role-prices-options input, select
+{
+    margin-top: -5px;
+}
+
+.festi-user-role-prices  h2
+{
+    font-size: 22px;
+    font-weight: 400;
+    padding: 9px 15px 4px 0;
+}
+
+
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles tr,
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles th,
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles td,
+fieldset.festi-user-role-prices-options #festi-user-role-taxes tr,
+fieldset.festi-user-role-prices-options #festi-user-role-taxes td,
+fieldset.festi-user-role-prices-options #festi-user-role-taxes th,
+fieldset.festi-user-role-prices-options #festi-user-quantity-discount tr,
+fieldset.festi-user-role-prices-options #festi-user-quantity-discount td,
+fieldset.festi-user-role-prices-options #festi-user-quantity-discount th
+{
+    border: 0;
+    padding: 5px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles th
+{
+    width:40%;
+}
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles td label
+{
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles span,
+fieldset.festi-user-role-prices-options #festi-user-role-taxes span
+{
+    font-weight: normal;
+}
+
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles td input
+{
+    width: 75px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.festi-user-role-prices
+{
+
+}
+
+.festi-content
+{
+    display: inline-block;
+    width:100%;
+}
+
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles td input,
+fieldset.festi-user-role-prices-options #festi-user-role-prices-discount-roles td select
+{
+    height: 28px;
+}
+
+div#festi-import-report .festi-import-report-title
+{
+    text-transform: uppercase;
+}
+
+.festi-user-role-prices
+{
+
+}
+
+div#festi-import-report p.festi-import-report-text
+{
+    font-weight: normal;
+}
+
+div#festi-import-report p.festi-import-report-text
+{
+    margin-left: 20px;
+}
+
+.festi-color-selector {
+    position: relative;
+    top: 0;
+    left: -3px;
+    width: 36px;
+    height: 36px;
+}
+
+.festi-color-selector div {
+    position: relative;
+    top: -4px;
+    left: 4px;
+    width: 28px;
+    height: 28px;
+    background: url(../../images/color_picker/select2.png) center;
+}
+
+div.colorpicker input {
+    height: 15px !important;
+    border: 0 !important;
+}
+
+body div.colorpicker {
+    z-index: 10;
+}
+
+/*Import Page*/
+.festi-user-role-prices-import-url {
+    width: 400px;
+}
+
+.festi-user-role-prices-form-table th {
+    position: relative;
+    vertical-align: top;
+    text-align: left;
+    padding: 20px 10px 20px 0;
+    width: 30%;
+    line-height: 1.3;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.festi-user-role-prices-form-table td {
+    margin-bottom: 9px;
+    padding: 20px 10px;
+    line-height: 1.3;
+    vertical-align: middle;
+}
+
+/*Modal container*/
+
+.modal-open {
+    overflow: hidden;
+}
+.modal {
+    position: fixed;
+    top: 15%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9992;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+.modal.fade .modal-dialog {
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition:      -o-transform .3s ease-out;
+    transition:         transform .3s ease-out;
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    -o-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+}
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9991;
+    background-color: rgba(0, 0, 0, .7);
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.modal-header .close {
+    margin-top: -2px;
+}
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 30px auto;
+    }
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+    .modal-sm {
+        width: 300px;
+    }
+}
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+.fade.in {
+    opacity: 1;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+
+#no-license-dialog .modal-dialog .modal-content,
+#no-connect-api .modal-dialog .modal-content  {
+    background-color: #f1f1f1;
+    
+}
+
+#no-license-dialog .modal-dialog .modal-content h2 {
+    text-align: center;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+#no-license-dialog .modal-dialog .modal-content p,
+#no-connect-api .modal-dialog .modal-content p {
+    font-size: 14px;
+    text-align: center;
+}
+
+#no-license-dialog .modal-dialog .modal-content .modal-header,
+#no-connect-api .modal-dialog .modal-content .modal-header {
+    border: none;
+}
+
+#no-license-dialog .modal-dialog .modal-content .flash-point {
+    margin-bottom: 20px;
+    position: relative;
+    text-align: left;
+    font-weight: 600;
+}
+
+#no-license-dialog .modal-dialog .modal-content .flash-point:before {
+    background: url("../../images/sprite.png") no-repeat -60px -60px;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    content: '';
+    left: -30px;
+    top: 2px;
+}
+
+#no-license-dialog .modal-dialog .modal-content .modal-body .row {
+    padding-left: 30px;
+}
+
+#no-license-dialog .modal-dialog.modal-lg {
+    width: 60%;
+}
+
+#no-license-dialog .modal-dialog .modal-content .modal-body table {
+    margin: 0 auto;
+}
+
+#no-license-dialog .modal-dialog .modal-content .modal-body table td {
+    width: 55%;
+}
+
+#no-license-dialog .modal-content .modal-body .btn{
+    margin-bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 25px;
+    position: relative;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    margin: 0 auto;
+    max-width: 180px;
+    display: block;
+}
+
+#no-license-dialog .modal-content .modal-body .btn:hover{
+    background-color: #008ec2;
+}
+
+#no-license-dialog .modal-content .modal-body .icon {
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 7px;
+    height: 16px;
+    width: 16px;
+}
+
+#no-license-dialog .modal-content .modal-body .text-w-icon {
+    vertical-align: initial;
+    padding-left: 25px;
+}
+
+#no-license-dialog .modal-content .modal-body .btn .icon {
+    position: absolute;
+    margin-top: -9px;
+    top: 50%;
+}
+#no-license-dialog .modal-content .modal-body .i-cart {
+    background: url("../../images/sprite.png") no-repeat 0px -60px;
+}
+
+#no-license-dialog .btn-primary {
+    padding: 15px 30px;
+    font-size: 15px;
+    background-color: #0085ba;
+}
+.festi-license-info {
+    margin-top: 10px;
+}
+.price-by-user-role-registrarion {
+    text-align: center;
+}
+.price-by-user-role-registrarion p {
+    font-size: 14px;
+}
+
+.price-by-user-role-registrarion-spinner {
+    opacity: 0;
+}
+
+body.mobile.modal-open #wpwrap {
+    position: absolute;
+}
+
+#festi-tax-table-header {
+    position: absolute;
+    width: 600px;
+    font-weight: 400;
+}
+
+.show-upload-view #module-extension
+{
+    color: #0073aa;
+    font-size: 18px;
+}
+
+.quantity-discount-row-hidden
+{
+    display: none;
+}
+
+.delete-row-quantity-discount {
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 5px;
+    vertical-align: middle;
+    color: #ff5c5c;
+}
+
+#quantity-discount-add-row {
+    width: 133px;
+    margin-left: 5px;
+}
+
+#quantity-discount-adjustment-type {
+}
+
+#festi-user-quantity-discount tbody .quantity-discount-header-row th {
+    margin-left: 2px;
+    display: table-cell;
+    float: left;
+}
+
+.quantity-discount-adjustment-type {
+    width: 170px;
+}
+
+.quantity-discount-value, .quantity-discount-min-value,
+.quantity-discount-max-value, tbody .quantity-discount-header-row th {
+    width: 130px;
+}

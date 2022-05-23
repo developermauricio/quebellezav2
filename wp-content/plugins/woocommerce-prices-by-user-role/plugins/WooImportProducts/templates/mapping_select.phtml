@@ -1,0 +1,55 @@
+<div class="festi-user-role-map-to-settings-map-to">
+	Map to:
+	<select 
+		name='mapTo[<?php echo $index; ?>]'
+		class='festi-user-role-map-to-settings-select'
+	>
+    <?php
+    	foreach ($mappingOptions as $key => $item) { // [1]
+    		if (array_key_exists('label', $item)) {
+            ?>
+    			<optgroup label="<?php echo $item['label'];?>"> 
+    		<?php
+    		}
+    		
+    		foreach ($item['options'] as $ident => $value) { // [2]
+    		    $selected = '';
+    		    
+    		    $isSelected = false;
+    		    if ($options && !empty($options['columns']) && !empty($options['columns'][$index])) {
+    		        
+    		        if (!empty($options['columns'][$index]['ident']) && $ident == $options['columns'][$index]['ident']) {
+    		            $isSelected = true;
+    		        } else if ($options['columns'][$index]['type'] == "attribute" && $ident == "custom_field") {
+    		            $isSelected = true;
+    		        }
+    		        
+    		    } else if ($isFirstRowHeader) {
+                    $headerValue = strtolower($firstRow[$index]);
+                    if (
+                        $headerValue == strtolower($ident) ||
+                        $headerValue == strtolower($value['label']) ||
+                        in_array($headerValue, $value['mapping_hints'])
+                    ) {
+                        $isSelected = true;
+                    }
+                }
+                
+                $selected = ($isSelected) ? 'selected="selected"' : "";
+                    
+            ?>
+    			<option <?php echo $selected;?> value="<?php echo $ident; ?>">
+    				<?php echo $value['label'];?>
+    			</option>
+    		<?php
+    		} // end [2]
+    		
+    		if (array_key_exists('label', $item)) {
+            ?>
+    			</optgroup>
+    		<?php
+    		}
+    	} // end [1]
+    ?>
+	</select>
+</div>

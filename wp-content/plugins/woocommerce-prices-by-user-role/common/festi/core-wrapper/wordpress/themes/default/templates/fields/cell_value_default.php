@@ -1,0 +1,12 @@
+<?php
+
+$url = $this->get('link');
+if ($url) {
+    $url = $this->fillString($url, $rowValues);
+?>
+    <a href="<?php echo $url; ?>" title="<?php echo htmlspecialchars($currentValue); ?>"><?php echo $currentValue; ?></a>
+<?php
+} else {
+    echo $currentValue;
+}
+?>

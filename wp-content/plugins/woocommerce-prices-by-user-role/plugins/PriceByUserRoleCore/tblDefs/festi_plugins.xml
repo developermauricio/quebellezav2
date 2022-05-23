@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table  charset="UTF-8" 
+        name="festi_plugins" 
+        primaryKey="id"
+        defaultOrderField="status" 
+        defaultOrderDirection="ASC"
+        exceptionMode="true"
+        rowsForPage="20">
+
+    <fields>
+        <field type="text"
+               readonly="true"
+               filter="text" 
+               caption="<?php echo __('Name'); ?>" 
+               name="ident" 
+               required="true" 
+               sorting="true"
+               onlyList="false"
+               width="70%" />
+
+
+        <field type="select" filter="select" caption="<?php echo __('Status');  ?>" sorting="true" name="status" width="30%"  required="true" >
+            <option id="active"><?php echo __('Active'); ?></option>
+            <option id="hidden"><?php echo __('Disable'); ?></option>
+        </field>
+    </fields>
+    
+    <actions>
+        <action type="list" caption="<?php echo __('Plugins'); ?>" />
+        <action type="insert" caption="<?php echo __('Add New'); ?>" />
+        <action type="edit" caption="<?php echo __('Edit'); ?>" />
+        <action type="remove" caption="<?php echo __('Remove'); ?>" />
+    </actions>
+    
+</table>

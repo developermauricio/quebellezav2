@@ -1,0 +1,1 @@
+<input type="text" name="<?php echo $field->getStore()->getIdent(); ?>[filter][<?php echo $field->getFilterKey(); ?>]" value="<?php echo htmlspecialchars($field->filterValue); ?>" class="db-filed-filter db-filed-filter-<?php echo $field->getType()?>" />

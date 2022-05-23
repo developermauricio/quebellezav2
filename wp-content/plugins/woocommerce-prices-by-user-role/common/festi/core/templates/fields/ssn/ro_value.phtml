@@ -1,0 +1,43 @@
+<?php 
+$id = "ssn_ro_" . $this->getSelectorPostfix();
+?>
+<div id="<?php echo $id;?>">
+    <span data-reallabel="<?php echo $realValue;?>" data-label="<?php echo $value;?>" data-timeout="10000"><?php echo $value;?></span>
+    <a href="javascript:void(0)" class="t-btn t-show"><?php echo __('show');?></a>
+    <a href="javascript:void(0)" class="t-btn t-hide hide"><?php echo __('hide');?></a>
+</div>
+
+<script>
+var partHideControl = function (el) {
+	var btnShow = jQuery('a.t-btn.t-show', el)
+	   , btnHide = jQuery('a.t-btn.t-hide', el)
+	   , content = jQuery('span', el)
+	   , interval;
+	   
+    var init = function () {
+        btnShow.click(function () {
+            show();
+            interval = setTimeout(hide, content.attr('data-timeout'));
+        });
+        btnHide.click(hide);
+    },
+    show = function () {
+    	content.text(content.attr('data-reallabel'));
+    	btnShow.addClass('hide');  
+    	btnHide.removeClass('hide');  		
+    },
+    hide = function () {
+    	content.text(content.attr('data-label'));
+    	btnShow.removeClass('hide');
+    	btnHide.addClass('hide');
+    	clearTimeout(interval);
+    };
+    
+    init();
+
+    return this;
+};
+jQuery(function () {
+	new partHideControl(jQuery("#<?php echo $id;?>"));
+});
+</script>

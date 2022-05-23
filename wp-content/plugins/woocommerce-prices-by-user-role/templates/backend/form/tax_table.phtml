@@ -1,0 +1,81 @@
+<table cellpadding="0" cellspacing="0" id="festi-user-role-taxes">
+    <tbody>
+    <?php
+
+    if (!isset($currentValue)) {
+        $currentValue = array();
+    }
+
+    foreach ($roles as $roleName => $role) {
+        ?>
+        <tr>
+            <th>
+                <span><?php echo $role['name'].":"; ?></span>
+            </th>
+            <td>
+                <?php
+
+                $columnKey = 'taxClass';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue
+                );
+
+                $facade = $this->ecommerceFacade;
+
+                $taxClasses = $facade->getTaxClasses();
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'item' => array(
+                        'values' => $taxClasses
+                    ),
+                    'currentValue' => $value
+                );
+
+                echo $this->fetch('form/input_select.phtml', $vars);
+
+                $columnKey = 'taxType';
+
+                $value = $this->tab->getCurrentRoleValueByColumn(
+                    $roleName,
+                    $columnKey,
+                    $currentValue,
+                    'Default'
+                );
+
+                $vars = array (
+                    'ident' => "{$ident}[{$roleName}][{$columnKey}]",
+                    'item' => array(
+                        'values' => array(
+                            static::FESTI_DEFAULT_TAX_KEY => __('Default', $this->languageDomain),
+                            static::FESTI_EXCLUDE_ALL_TAX_KEY => __(
+                                    'Show Price Excluding Tax',
+                                    $this->languageDomain
+                            ),
+                            static::FESTI_EXCLUDE_TAX_IN_SHOP_KEY => __(
+                                    'Show Price Excluding Tax in Shop',
+                                    $this->languageDomain
+                            ),
+                            static::FESTI_EXCLUDE_TAX_IN_CART_AND_CHECKOUT_KEY => __(
+                                    'Show Price Excluding Tax in Cart and Checkout',
+                                    $this->languageDomain
+                            )
+                        )
+                    ),
+                    'currentValue' => $value
+                );
+
+                echo $this->fetch('form/input_select.phtml', $vars);
+
+                ?>
+
+            </td>
+        </tr>
+    <?php
+    }
+    ?>
+    </tbody>
+</table>

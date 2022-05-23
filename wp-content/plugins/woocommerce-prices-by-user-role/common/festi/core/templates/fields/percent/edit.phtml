@@ -1,0 +1,28 @@
+<?php
+$attributes = $this->getElementAttributes();
+
+$disclaimer = $this->get('disclaimer');
+?>
+<div class="input-group input-group-small">
+	<span class="input-group-addon input-group-percent">%</span>
+    <input type="text" id="<?php echo $this->getName() ?>" name="<?php echo $this->getName() ?>" value="<?php echo $value; ?>" class="form-control <?php echo $this->getCssClassName(); ?>"<?php echo $attributes; ?> />
+    
+    <?php
+    if ($disclaimer) {
+    ?>
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign glyphicon-<?php echo $this->getName() ?>" data-toggle="tooltip"  title="<?php echo $disclaimer; ?>" ></span></span>
+    <?php
+    }
+    ?>
+</div>
+
+<?php
+if ($disclaimer) {
+?>
+    <script>
+        jQuery(".glyphicon-<?php echo $this->getName() ?>").tooltip({
+            'container':'body'
+        });
+    </script>
+<?php
+}

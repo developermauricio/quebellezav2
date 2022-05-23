@@ -1,0 +1,13 @@
+<?php
+echo '<div class="'.$this->getCssClassName().'-value">';
+if ($values) {
+    $content = '<ul>';
+    foreach ($values as $item) {
+        $content .= '<li>'.$item.'</li>';
+    }
+    $content .= '</ul>';
+
+    echo $content;
+}
+echo '</div>'
+?>

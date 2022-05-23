@@ -1,0 +1,25 @@
+<?php if (!empty($fileData)) { ?>
+<div class="btn-group">
+    <div class="btn-group">
+        <?php if (count($fileData) > 1) { ?>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <?php echo __('Files'); ?>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+        <?php foreach ($fileData as $fileName => $link) { ?>
+            <li><a target="_blank" href="<?php echo $link; ?>"><?php echo $fileName; ?></a></li>
+        <?php } ?>
+        </ul>
+        <?php } else {
+            $fileName = key($fileData);
+        ?>
+        <a target="_blank" href="<?php echo $fileData[$fileName]; ?>">
+            <span type="button" class="btn btn-default">
+                <?php echo $fileName; ?>
+            </span>
+        </a>
+        <?php } ?>
+    </div>
+</div>
+<?php } ?>

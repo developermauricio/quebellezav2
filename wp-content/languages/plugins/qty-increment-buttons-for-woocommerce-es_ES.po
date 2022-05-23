@@ -1,0 +1,51 @@
+# Translation of Plugins - Qty Increment Buttons for WooCommerce - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Qty Increment Buttons for WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-10-03 08:40:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Qty Increment Buttons for WooCommerce - Stable (latest release)\n"
+
+#: qty-increment-buttons-for-woocommerce.php:138
+msgid "Settings"
+msgstr "Ajustes"
+
+#: qty-increment-buttons-for-woocommerce.php:190
+msgid "Rate this plugin"
+msgstr "Valora este plugin"
+
+#: qty-increment-buttons-for-woocommerce.php:188
+msgid "Support & suggestions"
+msgstr "Soporte y sugerencias"
+
+#. translators: %s: Quantity.
+#: template/global/quantity-input.php:36
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. Author of the plugin
+msgid "taisho"
+msgstr "taisho"
+
+#: template/global/quantity-input.php:51
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr "Cantidad"
+
+#. translators: %s: Quantity.
+#: template/global/quantity-input.php:36
+msgid "%s quantity"
+msgstr "Cantidad %s"
+
+#. Plugin Name of the plugin
+msgid "Qty Increment Buttons for WooCommerce"
+msgstr "Qty Increment Buttons for WooCommerce"
+
+#. Description of the plugin
+msgid "Adds professionally looking \"-\" and \"+\" buttons around product quantity field, on product and cart page."
+msgstr "Añade los botones « + » y « - » con un aspecto profesional en el campo de cantidad del producto, en el producto y en la página del carrito."

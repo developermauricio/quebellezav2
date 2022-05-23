@@ -1,0 +1,594 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: festi-woocommerce-cart\n"
+"POT-Creation-Date: 2014-12-11 18:01+0200\n"
+"PO-Revision-Date: 2018-08-22 10:36+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Roger Sundberg <roger@webadmin.se>\n"
+"Language: sv\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:305
+#: common/WooUserRolePricesBackendFestiPlugin.php:338
+#: templates/frontend/customer_total_savings_price.phtml:7
+msgid "Price"
+msgstr "Pris"
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:429
+#: common/WooUserRolePricesBackendFestiPlugin.php:430
+#: common/backend/import/WooMappingImportOptions.php:27
+msgid "Prices by User Role"
+msgstr "Priser efter användarroll"
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:517
+msgid "Success refresh plugin"
+msgstr "Klar med uppdatering av plugin"
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:611
+msgid "Prices by User Role Options"
+msgstr "Priser efter användarroll Alternativ"
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:627
+msgid "Unable to remove a role. Key does not exist."
+msgstr "Det går inte att ta bort en roll. Nyckeln finns inte."
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:660
+msgid "You have not entered the name of the role"
+msgstr "Du har inte angett namnet på rollen"
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:714
+msgid "Unsuccessful attempt to create a role"
+msgstr "Misslyckat försök att skapa en roll"
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:898
+msgid "Caching does not work! "
+msgstr "Cachelagring fungerar inte!"
+
+#: common/WooUserRolePricesBackendFestiPlugin.php:903
+msgid "You don't have permission to access: "
+msgstr "Du har inte behörighet att komma åt: "
+
+#: common/backend/SettingsFestiPlugin.php:16
+msgid "Hide Add to Cart Button"
+msgstr "Dölj knappen Lägg till i kundvagn"
+
+#: common/backend/SettingsFestiPlugin.php:24
+msgid "Show Prices for all products only for Registered Users"
+msgstr "Visa priser för alla produkter endast för registrerade användare"
+
+#: common/backend/SettingsFestiPlugin.php:33
+msgid "Text for Non-Registered Users"
+msgstr "Text för icke-registrerade användare"
+
+#: common/backend/SettingsFestiPlugin.php:38
+msgid "Please login or register to see price"
+msgstr "Vänligen logga in eller registrera dig för att se pris"
+
+#: common/backend/SettingsFestiPlugin.php:45
+msgid "Hide Prices for User Roles"
+msgstr "Göm priser för användarroller"
+
+#: common/backend/SettingsFestiPlugin.php:56
+msgid "Text for Registered Users with Hidden Price"
+msgstr "Text för registrerade användare med dolt pris"
+
+#: common/backend/SettingsFestiPlugin.php:61
+msgid "Price for your role is hidden"
+msgstr "Priset för din roll är dolt"
+
+#: common/backend/SettingsFestiPlugin.php:68
+msgid "Discount or Markup for all products"
+msgstr "Rabatt eller Påslag för alla produkter"
+
+#: common/backend/SettingsFestiPlugin.php:73
+msgid "discount"
+msgstr "rabatt"
+
+#: common/backend/SettingsFestiPlugin.php:74
+msgid "markup"
+msgstr "påslag"
+
+#: common/backend/SettingsFestiPlugin.php:92
+msgid "Pricing Roles"
+msgstr "Pris roller"
+
+#: common/backend/SettingsFestiPlugin.php:103
+msgid "Display the Regular Price on"
+msgstr "Visa ordinarie pris på"
+
+#: common/backend/SettingsFestiPlugin.php:107
+msgid ""
+"Display the regular price as well as the user role price, and percent "
+"difference between it"
+msgstr ""
+"Visa ordinarie pris samt användarroll pris och procentuell skillnad mellan "
+"det"
+
+#: common/backend/SettingsFestiPlugin.php:113
+msgid "Product Page"
+msgstr "Produktsida"
+
+#: common/backend/SettingsFestiPlugin.php:115
+msgid "Products Archive Page (for Simple product)"
+msgstr "Produkter Arkiv sida (för enkel produkt)"
+
+#: common/backend/SettingsFestiPlugin.php:119
+msgid "Cart Page (for Order Total)"
+msgstr "Kundvagnssida (för order total)"
+
+#: common/backend/SettingsFestiPlugin.php:129
+msgid "Color for Price Title on Product Page"
+msgstr "Färg för Pris Titel på Produktsidan"
+
+#: common/backend/import/ImportUploadFields.php:16
+msgid "File to Import"
+msgstr "Fil som ska importeras"
+
+#: common/backend/import/ImportUploadFields.php:23
+msgid "URL to Import"
+msgstr "URL som ska importeras"
+
+#: common/backend/import/ImportUploadFields.php:29
+msgid ""
+"Enter the full URL to a CSV file. Leave this field  blank if uploading a "
+"file."
+msgstr ""
+"Ange den fullständiga URL till en CSV-fil. Lämna fältet tomt om du laddar "
+"upp en fil."
+
+#: common/backend/import/ImportUploadFields.php:37
+msgid "First Row is Header"
+msgstr "Första raden är Sidhuvud"
+
+#: common/backend/import/ImportUploadFields.php:44
+msgid "Path to Uploads Folder"
+msgstr "Sökväg till Uppladdningsmappen"
+
+#: common/backend/import/ImportUploadFields.php:55
+msgid "CSV field separator"
+msgstr "CSV fältavskiljare"
+
+#: common/backend/import/ImportUploadFields.php:61
+msgid "Enter the character used to separate each field in your CSV"
+msgstr "Ange tecken för separering av fälten i er CSV"
+
+#: common/backend/import/ImportUploadFields.php:68
+msgid "Category hierarchy separator"
+msgstr "Separator för Kategori hirarki"
+
+#: common/backend/import/ImportUploadFields.php:74
+msgid ""
+"Enter the character used to separate categories in a hierarchical structure"
+msgstr "Ange tecken för separering av kategorier i en hierarkisk struktur"
+
+#: common/backend/import/WooMappingImportOptions.php:19
+msgid "General"
+msgstr "﻿Allmänt"
+
+#: common/backend/import/WooMappingImportOptions.php:23
+msgid "Status and Visibility"
+msgstr "Status och Synlighet"
+
+#: common/backend/import/WooMappingImportOptions.php:32
+msgid "Pricing, Tax, and Shipping"
+msgstr "Priser, Skatt och Frakter"
+
+#: common/backend/import/WooMappingImportOptions.php:39
+msgid "Special Product Types"
+msgstr "Speciella Produkt Typer"
+
+#: common/backend/import/WooMappingImportOptions.php:46
+msgid "Categories and Tags"
+msgstr "Kategorier och Taggar"
+
+#: common/backend/import/WooMappingImportOptions.php:53
+msgid "Custom Attributes and Post Meta"
+msgstr "Speciella Attribut och Post Meta"
+
+#: common/backend/import/WooMappingImportOptions.php:60
+msgid "Product Images"
+msgstr "Produkt Bilder"
+
+#: common/backend/import/WooMappingImportOptions.php:84
+msgid "Do Not Import"
+msgstr "Importera Inte"
+
+#: common/backend/import/WooMappingImportOptions.php:96
+#: templates/backend/import/maping_settings.phtml:6
+msgid "Name"
+msgstr "Namn"
+
+#: common/backend/import/WooMappingImportOptions.php:103
+#: templates/backend/import/result_table.phtml:14
+msgid "SKU"
+msgstr "SKU"
+
+#: common/backend/import/WooMappingImportOptions.php:107
+msgid "Description"
+msgstr "Beskrivning"
+
+#: common/backend/import/WooMappingImportOptions.php:114
+msgid "Short Description"
+msgstr "Kortfattad beskrivning"
+
+#: common/backend/import/WooMappingImportOptions.php:129
+msgid "Status (Valid: publish/draft/trash/[more in Codex])"
+msgstr "Status (ange: publish/draft/trash/ [mer i Codex])"
+
+#: common/backend/import/WooMappingImportOptions.php:140
+msgid "Menu Order"
+msgstr "Meny ordning"
+
+#: common/backend/import/WooMappingImportOptions.php:149
+msgid "Visibility (Valid: visible/catalog/search/hidden)"
+msgstr "Synlighet (ange: visible/catalog/search/hidden)"
+
+#: common/backend/import/WooMappingImportOptions.php:160
+msgid "Featured (Valid: yes/no)"
+msgstr "Rekommenderad (ange: yes/no)"
+
+#: common/backend/import/WooMappingImportOptions.php:170
+msgid "Stock"
+msgstr "Lager"
+
+#: common/backend/import/WooMappingImportOptions.php:180
+msgid "Stock Status (Valid: instock/outofstock)"
+msgstr "Lagerstatus (ange: instock/outofstock)"
+
+#: common/backend/import/WooMappingImportOptions.php:191
+msgid "Backorders (Valid: yes/no/notify)"
+msgstr "Restorder (ange: yes/no/notify)"
+
+#: common/backend/import/WooMappingImportOptions.php:201
+msgid "Manage Stock (Valid: yes/no)"
+msgstr "Lagerhantering (ange: yes/no)"
+
+#: common/backend/import/WooMappingImportOptions.php:211
+msgid "Comment/Review Status (Valid: open/closed)"
+msgstr "Kommentarer/Recensioner (ange: open/closed)"
+
+#: common/backend/import/WooMappingImportOptions.php:221
+msgid "Pingback/Trackback Status (Valid: open/closed)"
+msgstr "Pingback/Trackback Status (ange: open/closed)"
+
+#: common/backend/import/WooMappingImportOptions.php:327
+msgid " Price"
+msgstr " Pris"
+
+#: common/backend/import/WooMappingImportOptions.php:366
+#: templates/frontend/customer_product_savings_price.phtml:2
+msgid "Regular Price"
+msgstr "Ordinarie Pris"
+
+#: common/backend/import/WooMappingImportOptions.php:377
+msgid "Sale Price"
+msgstr "Rea Pris"
+
+#: common/backend/import/WooMappingImportOptions.php:384
+msgid "Tax Status (Valid: taxable/shipping/none)"
+msgstr "Moms Status (ange: taxable/shipping/none)"
+
+#: common/backend/import/WooMappingImportOptions.php:395
+msgid "Tax Class"
+msgstr "Momsklass"
+
+#: common/backend/import/WooMappingImportOptions.php:402
+msgid "Shipping Class By ID (Separated by \"|\")"
+msgstr "Fraktklass med ID (Separerade med ”|”)"
+
+#: common/backend/import/WooMappingImportOptions.php:409
+msgid "Shipping Class By Name (Separated by \"|\")"
+msgstr "Fraktklass med Namn (Separerade med ”|”)"
+
+#: common/backend/import/WooMappingImportOptions.php:421
+msgid "Weight"
+msgstr "Vikt"
+
+#: common/backend/import/WooMappingImportOptions.php:430
+msgid "Length"
+msgstr "Längd"
+
+#: common/backend/import/WooMappingImportOptions.php:439
+msgid "Width"
+msgstr "Bredd"
+
+#: common/backend/import/WooMappingImportOptions.php:448
+msgid "Height"
+msgstr "Höjd"
+
+#: common/backend/import/WooMappingImportOptions.php:465
+msgid "Downloadable (Valid: yes/no)"
+msgstr "Nerladdningsbar (ange: yes/no)"
+
+#: common/backend/import/WooMappingImportOptions.php:475
+msgid "Virtual (Valid: yes/no)"
+msgstr "Virtuell (ange: yes/no)"
+
+#: common/backend/import/WooMappingImportOptions.php:485
+msgid "Product Type (Valid: simple/variable/grouped/external)"
+msgstr "Produkttyp (ange: simple/variable/grouped/external)"
+
+#: common/backend/import/WooMappingImportOptions.php:495
+msgid "Button Text (External Product Only)"
+msgstr "Knapptext (Extern produkt enbart)"
+
+#: common/backend/import/WooMappingImportOptions.php:504
+msgid "Product URL (External Product Only)"
+msgstr "Produkt URL (Extern produkt enbart)"
+
+#: common/backend/import/WooMappingImportOptions.php:513
+msgid "File Path (Downloadable Product Only)"
+msgstr "Sökväg (Nerladdningsbar produkt enbart)"
+
+#: common/backend/import/WooMappingImportOptions.php:524
+msgid "Download Expiration (in Days)"
+msgstr "Nerladdning upphör (i dagar)"
+
+#: common/backend/import/WooMappingImportOptions.php:534
+msgid "Download Limit (Number of Downloads)"
+msgstr "Nerladdning begränsad (Antal nerladdningar)"
+
+#: common/backend/import/WooMappingImportOptions.php:552
+msgid "Categories By Name (Separated by \"|\")"
+msgstr "Kategorier efter Namn (Separerade med ”|”)"
+
+#: common/backend/import/WooMappingImportOptions.php:565
+msgid "Categories By ID (Separated by \"|\")"
+msgstr "Kategorier efter ID (Separerade med ”|”)"
+
+#: common/backend/import/WooMappingImportOptions.php:572
+msgid "Tags By Name (Separated by \"|\")"
+msgstr "Tags efter Namn (Separerade med ”|”)"
+
+#: common/backend/import/WooMappingImportOptions.php:585
+msgid "Tags By ID (Separated by \"|\")"
+msgstr "Tags efter ID (Separerade med ”|”)"
+
+#: common/backend/import/WooMappingImportOptions.php:600
+msgid "Custom Field / Product Attribute (Set Name Below)"
+msgstr "Egna fält / Produktattribut (Ange Namn nedan)"
+
+#: common/backend/import/WooMappingImportOptions.php:610
+msgid "Post Meta"
+msgstr "Post Meta"
+
+#: common/backend/import/WooMappingImportOptions.php:627
+msgid "Images (By URL, Separated by \"|\")"
+msgstr "Bilder (efter URL, Separerade med ”|”)"
+
+#: common/backend/import/WooMappingImportOptions.php:642
+msgid "Images (By Local File Path, Separated by \"|\")"
+msgstr "Bilder (efter lokal sökväg, Separerade med ”|”)"
+
+#: common/backend/import/WooProductsSkuManager.php:95
+msgid "Skipped import of product without a name"
+msgstr "Hoppat över import av produkt utan namn"
+
+#: common/backend/import/WooProductsSkuManager.php:158
+#, php-format
+msgid "Skipping import of duplicate image %s."
+msgstr "Hoppar över import av duplicerad bild %s."
+
+#: common/backend/import/WooProductsSkuManager.php:172
+#, php-format
+msgid "Couldn't find local file %s."
+msgstr "Kan inte hitta lokal fil %s."
+
+#: common/backend/import/WooProductsSkuManager.php:291
+#, php-format
+msgid ""
+"A valid file extension wasn't found in %s. Extension found was %s. Allowed "
+"extensions are: %s."
+msgstr ""
+"Giltig filändelse hittades inte i %s. Hittad ändelse var %s. Tillåtna "
+"ändelser är: %s."
+
+#: common/backend/import/WooProductsSkuManager.php:319
+#, php-format
+msgid "Error Encountered while attempting to download %s"
+msgstr "Fel uppstod vid nerladdning av %s"
+
+#: common/backend/import/WooProductsSkuManager.php:330
+#, php-format
+msgid "Couldn't download file %s."
+msgstr "Kan inte ladda ner fil %s."
+
+#: common/backend/import/WooProductsSkuManager.php:374
+#, php-format
+msgid "HTTP status %s encountered while attempting to download %s"
+msgstr "HTTP status %s hände vid nerladdning av %s"
+
+#: common/backend/import/WooProductsSkuManager.php:470
+#, php-format
+msgid "Couldn't insert product with name %s."
+msgstr "Kan inte ladda in produkt med namn %s."
+
+#: common/backend/import/WooProductsSkuManager.php:483
+#, php-format
+msgid "Couldn't update product with ID %s."
+msgstr "Kan inte uppdatera produkt med ID %s."
+
+#: common/backend/import/WooProductsSkuManager.php:512
+#, php-format
+msgid "Insert product with ID %s."
+msgstr "Ladda in produkt med ID %s."
+
+#: common/backend/import/WooProductsSkuManager.php:520
+#, php-format
+msgid "Updating product with ID %s."
+msgstr "Uppdaterar produkt med ID %s."
+
+#: templates/backend/manual_url.phtml:8
+msgid "Link to manual"
+msgstr "Länk till manual"
+
+#: templates/backend/product_tab.phtml:3
+msgid "Hide Roles Price"
+msgstr "Göm priser för användarroller"
+
+#: templates/backend/product_tab_content.phtml:4
+msgid "General Settings"
+msgstr "﻿Allmänna inställningar"
+
+#: templates/backend/product_tab_content.phtml:15
+msgid "Show Prices only for Registered Users"
+msgstr "Visa priser endast för Registrerade Användare"
+
+#: templates/backend/product_tab_content.phtml:20
+msgid ""
+"To activate option per-product - please disable &quot;Show Prices for all "
+"products only for Registered Users&quot; in General Settings"
+msgstr ""
+"För aktivering av optionen per-produkt - avaktivera &quot;Visa priser för "
+"alla produkter endast för registrerade användare&quot; i Allmänna "
+"inställningar"
+
+#: templates/backend/product_tab_content.phtml:39
+msgid "Hide Prices for User Roles:"
+msgstr "Göm priser för AnvändarRoller:"
+
+#: templates/backend/product_tab_content.phtml:52
+msgid "To Enable this role you need disable general setting for all products"
+msgstr ""
+"För aktivering av denna Roll måste du stänga av Allmänna inställningar för "
+"alla produkter"
+
+#: templates/backend/refresh.phtml:10
+msgid "Refresh Plugin"
+msgstr "Ladda om Plugin"
+
+#: templates/backend/rolle_filds.phtml:39
+msgid "delete"
+msgstr "radera"
+
+#: templates/backend/settings_page.phtml:35
+msgid "Save Changes"
+msgstr "Spara ändringar"
+
+#: templates/backend/settings_page.phtml:40
+#: templates/backend/settings_page.phtml:68
+msgid "Add New Role"
+msgstr "Skapa ny Roll"
+
+#: templates/backend/settings_page.phtml:48
+msgid "Active"
+msgstr "Aktiv"
+
+#: templates/backend/settings_page.phtml:52
+msgid "Role Name"
+msgstr "Roll Namn"
+
+#: templates/backend/form/multicheck.phtml:59
+msgid "&times;"
+msgstr "&times;"
+
+#: templates/backend/form/multidiscount.phtml:60
+msgid "%"
+msgstr "%"
+
+#: templates/backend/import/import_preview_page.phtml:13
+msgid "Import"
+msgstr "Import"
+
+#: templates/backend/import/import_result_page.phtml:7
+msgid "The process of importing completed. "
+msgstr "Importeringen slutförd. "
+
+#: templates/backend/import/import_result_page.phtml:11
+msgid "Please Wait! The process of importing. "
+msgstr "Vänligen vänta... Importerar… "
+
+#: templates/backend/import/import_result_page.phtml:29
+msgid "Show Responses Log"
+msgstr "Visa Respons log"
+
+#: templates/backend/import/import_upload_page.phtml:40
+msgid "Upload and Preview"
+msgstr "Ladda upp och förhandsvisa"
+
+#: templates/backend/import/maping_settings.phtml:2
+msgid "Custom Field Settings"
+msgstr "Egna Fält Inställningar"
+
+#: templates/backend/import/maping_settings.phtml:21
+msgid "Visible?"
+msgstr "Synlig?"
+
+#: templates/backend/import/maping_settings.phtml:31
+msgid "Image Settings"
+msgstr "Bild inställningar"
+
+#: templates/backend/import/maping_settings.phtml:42
+msgid "Set First Image as Featured"
+msgstr "Ange första bilden som utvald"
+
+#: templates/backend/import/maping_settings.phtml:53
+msgid "Skip Duplicate Images"
+msgstr "Hoppa över duplicerade bilder"
+
+#: templates/backend/import/maping_settings.phtml:63
+msgid "Post Meta Settings"
+msgstr "Post Meta inställningar"
+
+#: templates/backend/import/maping_settings.phtml:70
+msgid "Meta Key"
+msgstr "Meta Nyckel"
+
+#: templates/backend/import/progress_data.phtml:4
+msgid "Processed"
+msgstr "Bearbetad"
+
+#: templates/backend/import/progress_data.phtml:11
+msgid "Remainin"
+msgstr "Kvarstående"
+
+#: templates/backend/import/progress_data.phtml:15
+msgid "Total"
+msgstr "Total"
+
+#: templates/backend/import/result_table.phtml:5
+msgid "#Row"
+msgstr "#Rad"
+
+#: templates/backend/import/result_table.phtml:8
+msgid "Post ID"
+msgstr "Post ID"
+
+#: templates/backend/import/result_table.phtml:11
+msgid "Product Name"
+msgstr "Produktnamn"
+
+#: templates/backend/import/result_table.phtml:17
+msgid "Message"
+msgstr "Meddelande"
+
+#: templates/backend/import/result_table.phtml:20
+msgid "Result"
+msgstr "Resultat"
+
+#: templates/frontend/customer_product_savings_price.phtml:7
+msgid "Your Price"
+msgstr "Ert Pris"
+
+#: templates/frontend/customer_product_savings_price.phtml:12
+msgid "Savings"
+msgstr "Besparing"
+
+#: templates/frontend/customer_total_savings_price.phtml:2
+msgid "Total retail"
+msgstr "Total handeln"
+
+#: templates/frontend/customer_total_savings_price.phtml:12
+msgid "Total savings"
+msgstr "Total besparing"
+
+msgid "WooCommerce not active or not installed."
+msgstr "WooCommerce inte aktiverat eller installerat."
